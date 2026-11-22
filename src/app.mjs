@@ -87,6 +87,21 @@ document.addEventListener('change',e=>{const el=e.target;try{
   else if(el.dataset.amount){const n=decision.at(el.dataset.amount);decision.select(el.dataset.amount,String(Math.max(0,Math.min(n.max,Math.floor(+el.value||0)))));renderTurn();}
   else if(el.dataset.spaceSelect && el.value){decision.select(el.dataset.spaceSelect,el.value);updateDecision();}
 }catch(err){notify(tr(err.message));}});
+function openInvitation() {
+  const code = roomCode(new URLSearchParams(location.hash.slice(1)).get('stul'));
+  if (!code) return false;
+  const currentCode = table?.code || get(sessionStorage, 'active')?.code;
+  if (currentCode === code) {
+    close();
+    resume();
+  } else {
+    enterDialog('join', code);
+  }
+  return true;
+}
+window.addEventListener('hashchange', openInvitation);
 function init(){decorate();soundButton();filtersUI();$('#featured').innerHTML=['010','135','079','014'].map(id=>project(card(id))).join('');show('home',{scroll:false});
-  const invite=roomCode(new URLSearchParams(location.hash.slice(1)).get('stul'));const active=get(sessionStorage,'active');if(invite){if(active?.code===invite){resume();}else enterDialog('join',invite);}else if(active){try{resume();}catch(e){notify(tr(e.message));show('home');}}}
+  try { if (!openInvitation() && get(sessionStorage, 'active')) resume(); }
+  catch (e) { notify(tr(e.message)); show('home'); }
+}
 init();
