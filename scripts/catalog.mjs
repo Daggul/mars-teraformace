@@ -1,0 +1,24 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+const dir = new URL('../',import.meta.url);
+const read = name => fs.readFileSync(new URL(name,dir),'utf8');
+const data = name => JSON.parse(read('data/'+name));
+const context = vm.createContext({console,structuredClone});
+vm.runInContext(read('public/vendor/mars-rules.js'),context);
+const raw = data('all-cards.json');
+const base = data('base-cs.json');
+const extra = data('expansions-cs.json');
+const norm = text => text.toLowerCase().replace(/[^a-z0-9]/g,'');
+const aliases = {'Allied Banks':'Allied Bank','Refugee Camp':'Refugee Camps','Titan Floater Launch-pad':'Titan Floating Launch-pad'};
+const names = new Map(raw.map(c=>[norm(c.name),c]));
+const translated = new Map(Object.values(base).map(c=>[norm(c.engine),c]));
+const cards = context.MarsRules.cards().map(engine=>{
+  const tr = translated.get(norm(engine.name));
+  const meta = names.get(norm(aliases[engine.name] || engine.name)) || names.get(norm(tr?.en || ''));
+  if(!meta) throw Error('Chybějí údaje ke kartě '+engine.name);
+  const localized = tr || extra[meta.id];
+  const text = localized?.text || meta.description.map(d=>d.text).join(' ');
+  return {id:meta.id,key:engine.name,name:localized?.name || meta.name,text,cost:engine.cost,kind:meta.type,set:engine.expansion,tags:engine.tags,credits:meta.startingCredits,action:engine.hasAction,resource:engine.resourceType,points:meta.vp?.find(v=>v.condition==='fixed')?.amount};
+}).sort((a,b)=>a.id.localeCompare(b.id,'en',{numeric:true}));
+if(cards.filter(c=>/^\d{3}$/.test(c.id) && Number(c.id)<=208).length!==208 || new Set(cards.map(c=>c.id)).size!==cards.length) throw Error('Chyba čísel karet.');
+fs.writeFileSync(new URL('data/catalog.json',dir),JSON.stringify(cards));

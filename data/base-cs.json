@@ -1,0 +1,1328 @@
+{
+  "1": {
+    "name": "Výcvikové středisko kolonistů",
+    "text": "Obsah kyslíku musí být nejvýše 5 %. Na konci hry získáš 2 VB.",
+    "en": "Colonizer Training Camp",
+    "engine": "Colonizer Training Camp"
+  },
+  "2": {
+    "name": "Konzorcium těžby na asteroidech",
+    "text": "Musíš produkovat alespoň 1 titan. Jednomu hráči sniž produkci titanu o 1 a sobě ji o 1 zvyš. Na konci hry získáš 1 VB.",
+    "en": "Asteroid Mining Consortium",
+    "engine": "Asteroid Mining Consortium"
+  },
+  "3": {
+    "name": "Hlubinné vytápění",
+    "text": "Zvyš svou produkci energie o 1 a teplotu Marsu o 2 °C.",
+    "en": "Deep Well Heating",
+    "engine": "Deep Well Heating"
+  },
+  "4": {
+    "name": "Očkování mraků",
+    "text": "Na Marsu musejí být alespoň 3 oceány. Sniž svůj příjem o 1 a produkci tepla jednomu hráči o 1. Zvyš svou produkci rostlin o 2.",
+    "en": "Cloud Seeding",
+    "engine": "Cloud Seeding"
+  },
+  "5": {
+    "name": "Pátrání po životě",
+    "text": "Obsah kyslíku musí být nejvýše 6 %. Jednou za generaci můžeš zaplatit 1 M€ a odkrýt vrchní kartu balíčku. Má-li symbol mikrobů, ulož sem 1 vědecký zdroj. Odkrytou kartu odhoď. Za alespoň jeden vědecký zdroj na této kartě získáš celkem 3 VB.",
+    "en": "Search For Life",
+    "engine": "Search For Life"
+  },
+  "6": {
+    "name": "Cech vynálezců",
+    "text": "Jednou za generaci se můžeš podívat na vrchní kartu balíčku. Buď ji za 3 M€ vezmi do ruky, nebo ji odhoď.",
+    "en": "Inventors' Guild",
+    "engine": "Inventors Guild"
+  },
+  "7": {
+    "name": "Marťanské železnice",
+    "text": "Jednou za generaci můžeš vydat 1 energii. Získáš 1 M€ za každé město na povrchu Marsu.",
+    "en": "Martian Rails",
+    "engine": "Martian Rails"
+  },
+  "8": {
+    "name": "Hlavní město",
+    "text": "Na Marsu musejí být alespoň 4 oceány. Umísti hlavní město. Sniž svou produkci energie o 2 a zvyš příjem o 5. K bodům za sousední zeleň získáš navíc 1 VB za každý sousední oceán.",
+    "en": "Capital",
+    "engine": "Capital"
+  },
+  "9": {
+    "name": "Křemíkový asteroid",
+    "text": "Zvyš teplotu o 2 °C a vezmi si 2 titany. Jednomu hráči můžeš odstranit až 3 rostliny.",
+    "en": "Asteroid",
+    "engine": "Asteroid"
+  },
+  "10": {
+    "name": "Kometa",
+    "text": "Zvyš teplotu o 2 °C a umísti oceán. Jednomu hráči můžeš odstranit až 3 rostliny.",
+    "en": "Comet",
+    "engine": "Comet"
+  },
+  "11": {
+    "name": "Velký asteroid",
+    "text": "Zvyš teplotu o 4 °C a vezmi si 4 titany. Jednomu hráči můžeš odstranit až 4 rostliny.",
+    "en": "Big Asteroid",
+    "engine": "Big Asteroid"
+  },
+  "12": {
+    "name": "Dovoz vody z Europy",
+    "text": "Jednou za generaci můžeš za 12 M€ umístit oceán. Částku lze hradit také titanem. Získáš 1 VB za každý svůj symbol Jupiteru včetně tohoto.",
+    "en": "Water Import From Europa",
+    "engine": "Water Import From Europa"
+  },
+  "13": {
+    "name": "Kosmický výtah",
+    "text": "Zvyš svou produkci titanu o 1. Jednou za generaci můžeš prodat 1 ocel za 5 M€. Na konci hry získáš 2 VB.",
+    "en": "Space Elevator",
+    "engine": "Space Elevator"
+  },
+  "14": {
+    "name": "Vývojové centrum",
+    "text": "Jednou za generaci můžeš vydat 1 energii a dobrat si kartu.",
+    "en": "Development Center",
+    "engine": "Development Center"
+  },
+  "15": {
+    "name": "Rovníkový magnetizér",
+    "text": "Jednou za generaci můžeš snížit svou produkci energie o 1 a získat 1 TR.",
+    "en": "Equatorial Magnetizer",
+    "engine": "Equatorial Magnetizer"
+  },
+  "16": {
+    "name": "Kráter pod kupolí",
+    "text": "Obsah kyslíku musí být nejvýše 7 %. Umísti město a vezmi si 3 rostliny. Sniž svou produkci energie o 1 a zvyš příjem o 3. Na konci hry získáš 1 VB.",
+    "en": "Domed Crater",
+    "engine": "Domed Crater"
+  },
+  "17": {
+    "name": "Město Noctis",
+    "text": "Polož město na vyhrazené pole Noctis bez ohledu na sousední města. Sniž svou produkci energie o 1 a zvyš příjem o 3.",
+    "en": "Noctis City",
+    "engine": "Noctis City"
+  },
+  "18": {
+    "name": "Metan z Titanu",
+    "text": "Obsah kyslíku musí být alespoň 2 %. Zvyš svou produkci tepla i rostlin, obojí o 2. Na konci hry získáš 2 VB.",
+    "en": "Methane From Titan",
+    "engine": "Methane From Titan"
+  },
+  "19": {
+    "name": "Dovoz vodíku",
+    "text": "Umísti oceán. Vyber si 3 rostliny, nebo na jinou svou vhodnou kartu přidej 3 mikroby či 2 zvířata.",
+    "en": "Imported Hydrogen",
+    "engine": "Imported Hydrogen"
+  },
+  "20": {
+    "name": "Výzkumná stanice",
+    "text": "Založ město na poli, které nesousedí s žádnou destičkou. Všechny další karty hraješ se slevou 1 M€.",
+    "en": "Research Outpost",
+    "engine": "Research Outpost"
+  },
+  "21": {
+    "name": "Kosmický přístav na Phobosu",
+    "text": "Polož město na vyhrazené pole Phobos mimo povrch Marsu. Zvyš svou produkci titanu o 1. Na konci hry získáš 3 VB.",
+    "en": "Phobos Space Haven",
+    "engine": "Phobos Space Haven"
+  },
+  "22": {
+    "name": "Černý prach na pólech",
+    "text": "Umísti oceán. Sniž svůj příjem o 2 a zvyš svou produkci tepla o 3.",
+    "en": "Black Polar Dust",
+    "engine": "Black Polar Dust"
+  },
+  "23": {
+    "name": "Polární řasy",
+    "text": "Teplota musí být nejvýše −12 °C. Získej 1 rostlinu. Pokaždé, když kterýkoli hráč umístí oceán, získáš další 2 rostliny.",
+    "en": "Arctic Algae",
+    "engine": "Arctic Algae"
+  },
+  "24": {
+    "name": "Predátoři",
+    "text": "Obsah kyslíku musí být alespoň 11 %. Jednou za generaci můžeš odebrat 1 zvíře z jiné přístupné karty a přidat je sem. Každé zvíře na této kartě přináší 1 VB.",
+    "en": "Predators",
+    "engine": "Predators"
+  },
+  "25": {
+    "name": "Vesmírná stanice",
+    "text": "Při hraní dalších karet se symbolem vesmíru platíš o 2 M€ méně. Na konci hry získáš 1 VB.",
+    "en": "Space Station",
+    "engine": "Space Station"
+  },
+  "26": {
+    "name": "Národní park Eos Chasma",
+    "text": "Teplota musí být alespoň −12 °C. Získej 3 rostliny a zvyš svůj příjem o 2. Na jednu svou kartu umožňující chov zvířat přidej 1 zvíře. Na konci hry získáš 1 VB.",
+    "en": "Eos Chasma National Park",
+    "engine": "Eos Chasma National Park"
+  },
+  "27": {
+    "name": "Mezihvězdná kolonizační loď",
+    "text": "Musíš mít alespoň 5 symbolů vědy. Na konci hry získáš 4 VB.",
+    "en": "Interstellar Colony Ship",
+    "engine": "Interstellar Colony Ship"
+  },
+  "28": {
+    "name": "Bezpečnostní flotila",
+    "text": "Jednou za generaci můžeš utratit 1 titan a přidat sem 1 stíhačku. Každá zdejší stíhačka přináší 1 VB.",
+    "en": "Security Fleet",
+    "engine": "Security Fleet"
+  },
+  "29": {
+    "name": "Město pod kupolí",
+    "text": "Obsah kyslíku musí být nejvýše 9 %. Založ město, sniž svou produkci energie o 1 a zvyš příjem o 3.",
+    "en": "Cupola City",
+    "engine": "Cupola City"
+  },
+  "30": {
+    "name": "Paprsek z Měsíce",
+    "text": "Sniž svůj příjem o 2. Svou produkci energie i tepla zvyš o 2.",
+    "en": "Lunar Beam",
+    "engine": "Lunar Beam"
+  },
+  "31": {
+    "name": "Účinné brzdění atmosférou",
+    "text": "Kdykoli zahraješ událost se symbolem vesmíru, získáš 3 M€ a 3 tepla.",
+    "en": "Optimal Aerobraking",
+    "engine": "Optimal Aerobraking"
+  },
+  "32": {
+    "name": "Podzemní město",
+    "text": "Založ město. Sniž svou produkci energie o 2 a zvyš produkci oceli o 2.",
+    "en": "Underground City",
+    "engine": "Underground City"
+  },
+  "33": {
+    "name": "Mikrobi živící se regolitem",
+    "text": "Jednou za generaci sem můžeš přidat 1 mikrob, nebo odsud odebrat 2 mikroby a zvýšit obsah kyslíku o jeden procentní bod.",
+    "en": "Regolith Eaters",
+    "engine": "Regolith Eaters"
+  },
+  "34": {
+    "name": "Bakterie produkující skleníkové plyny",
+    "text": "Obsah kyslíku musí být alespoň 4 %. Jednou za generaci sem můžeš přidat 1 mikrob, nebo odsud odebrat 2 mikroby a zvýšit teplotu o 2 °C.",
+    "en": "GHG Producing Bacteria",
+    "engine": "GHG Producing Bacteria"
+  },
+  "35": {
+    "name": "Mravenci",
+    "text": "Obsah kyslíku musí být alespoň 4 %. Jednou za generaci můžeš odebrat 1 mikrob z jiné přístupné karty a přidat jej sem. Za každé 2 zdejší mikroby získáš 1 VB.",
+    "en": "Ants",
+    "engine": "Ants"
+  },
+  "36": {
+    "name": "Vypouštění inertních plynů",
+    "text": "Zvyš svůj TR o 2.",
+    "en": "Release of Inert Gases",
+    "engine": "Release of Inert Gases"
+  },
+  "37": {
+    "name": "Asteroid bohatý na dusík",
+    "text": "Zvyš svůj TR o 2 a teplotu o 2 °C. Máš-li alespoň 3 symboly rostlin, zvyš svou produkci rostlin o 4. Jinak ji zvyš o 1.",
+    "en": "Nitrogen-Rich Asteroid",
+    "engine": "Nitrogen-Rich Asteroid"
+  },
+  "38": {
+    "name": "Výroba vozítek",
+    "text": "Za každé nově umístěné město kteréhokoli hráče získáš 2 M€. Počítají se i města mimo Mars. Na konci hry získáš 1 VB.",
+    "en": "Rover Construction",
+    "engine": "Rover Construction"
+  },
+  "39": {
+    "name": "Pád Deimosu",
+    "text": "Zvyš teplotu o 6 °C a vezmi si 4 oceli. Jednomu hráči můžeš odstranit až 8 rostlin.",
+    "en": "Deimos Down",
+    "engine": "Deimos Down"
+  },
+  "40": {
+    "name": "Těžba na asteroidech",
+    "text": "Zvyš svou produkci titanu o 2. Na konci hry získáš 2 VB.",
+    "en": "Asteroid Mining",
+    "engine": "Asteroid Mining"
+  },
+  "41": {
+    "name": "Potravinářský závod",
+    "text": "Sniž svou produkci rostlin o 1 a zvyš příjem o 4. Na konci hry získáš 1 VB.",
+    "en": "Food Factory",
+    "engine": "Food Factory"
+  },
+  "42": {
+    "name": "Archebakterie",
+    "text": "Teplota musí být nejvýše −18 °C. Zvyš svou produkci rostlin o 1.",
+    "en": "Archaebacteria",
+    "engine": "ArchaeBacteria"
+  },
+  "43": {
+    "name": "Zpracování uhličitanů",
+    "text": "Sniž svou produkci energie o 1 a zvyš produkci tepla o 3.",
+    "en": "Carbonate Processing",
+    "engine": "Carbonate Processing"
+  },
+  "44": {
+    "name": "Přírodní rezervace",
+    "text": "Obsah kyslíku musí být nejvýše 4 %. Umísti rezervaci na pole, které nesousedí s žádnou destičkou. Zvyš svůj příjem o 1. Na konci hry získáš 1 VB.",
+    "en": "Natural Preserve",
+    "engine": "Natural Preserve"
+  },
+  "45": {
+    "name": "Jaderná energetika",
+    "text": "Sniž svůj příjem o 2 a zvyš svou produkci energie o 3.",
+    "en": "Nuclear Power",
+    "engine": "Nuclear Power"
+  },
+  "46": {
+    "name": "Energie z blesků",
+    "text": "Musíš mít alespoň 3 symboly vědy. Zvyš svůj příjem i svou produkci energie, obojí o 1. Na konci hry získáš 1 VB.",
+    "en": "Lightning Harvest",
+    "engine": "Lightning Harvest"
+  },
+  "47": {
+    "name": "Řasy",
+    "text": "Na Marsu musejí být alespoň 5 oceánů. Vezmi si 1 rostlinu a zvyš svou produkci rostlin o 2.",
+    "en": "Algae",
+    "engine": "Algae"
+  },
+  "48": {
+    "name": "Přizpůsobený lišejník",
+    "text": "Zvyš svou produkci rostlin o 1.",
+    "en": "Adapted Lichen",
+    "engine": "Adapted Lichen"
+  },
+  "49": {
+    "name": "Želvušky",
+    "text": "Jednou za generaci sem můžeš přidat 1 mikrob. Každé 4 zdejší mikroby přinášejí 1 VB.",
+    "en": "Tardigrades",
+    "engine": "Tardigrades"
+  },
+  "50": {
+    "name": "Virus",
+    "text": "Jednomu hráči můžeš odstranit až 5 rostlin, nebo z jedné přístupné karty odebrat až 2 zvířata.",
+    "en": "Virus",
+    "engine": "Virus"
+  },
+  "51": {
+    "name": "Letovisko na Mirandě",
+    "text": "Za každý svůj symbol Země zvyš příjem o 1. Na konci hry získáš 1 VB.",
+    "en": "Miranda Resort",
+    "engine": "Miranda Resort"
+  },
+  "52": {
+    "name": "Ryby",
+    "text": "Teplota musí být alespoň 2 °C. Jednomu hráči sniž produkci rostlin o 1. Jednou za generaci sem můžeš přidat 1 zvíře. Každé zdejší zvíře přináší 1 VB.",
+    "en": "Fish",
+    "engine": "Fish"
+  },
+  "53": {
+    "name": "Jezero Marineris",
+    "text": "Teplota musí být alespoň 0 °C. Umísti 2 oceány. Na konci hry získáš 2 VB.",
+    "en": "Lake Marineris",
+    "engine": "Lake Marineris"
+  },
+  "54": {
+    "name": "Drobná zvířata",
+    "text": "Obsah kyslíku musí být alespoň 6 %. Jednomu hráči sniž produkci rostlin o 1. Jednou za generaci sem můžeš přidat 1 zvíře. Každá 2 zdejší zvířata přinášejí 1 VB.",
+    "en": "Small Animals",
+    "engine": "Small Animals"
+  },
+  "55": {
+    "name": "Pěstování chaluh",
+    "text": "Na Marsu musejí být alespoň 6 oceánů. Získej 2 rostliny, zvyš svůj příjem o 2 a produkci rostlin o 3. Na konci hry získáš 1 VB.",
+    "en": "Kelp Farming",
+    "engine": "Kelp Farming"
+  },
+  "56": {
+    "name": "Důl",
+    "text": "Zvyš svou produkci oceli o 1.",
+    "en": "Mine",
+    "engine": "Mine"
+  },
+  "57": {
+    "name": "Loděnice na Vestě",
+    "text": "Zvyš svou produkci titanu o 1. Na konci hry získáš 1 VB.",
+    "en": "Vesta Shipyard",
+    "engine": "Vesta Shipyard"
+  },
+  "58": {
+    "name": "Paprsek z thoriového asteroidu",
+    "text": "Musíš mít alespoň 1 symbol Jupiteru. Zvyš svou produkci energie i tepla, obojí o 3. Na konci hry získáš 1 VB.",
+    "en": "Beam From a Thorium Asteroid",
+    "engine": "Beam From A Thorium Asteroid"
+  },
+  "59": {
+    "name": "Mangrovy",
+    "text": "Teplota musí být alespoň 4 °C. Umísti zeleň na volné pole vyhrazené pro oceán. Můžeš ji položit i mimo své území. Zvyš obsah kyslíku o jeden procentní bod. Na konci hry získáš 1 VB.",
+    "en": "Mangrove",
+    "engine": "Mangrove"
+  },
+  "60": {
+    "name": "Stromy",
+    "text": "Teplota musí být alespoň −4 °C. Získej 1 rostlinu a zvyš svou produkci rostlin o 3. Na konci hry získáš 1 VB.",
+    "en": "Trees",
+    "engine": "Trees"
+  },
+  "61": {
+    "name": "Konzorcium Velkého srázu",
+    "text": "Musíš produkovat alespoň 1 ocel. Jednomu hráči sniž produkci oceli o 1 a sobě ji o 1 zvyš.",
+    "en": "Great Escarpment Consortium",
+    "engine": "Great Escarpment Consortium"
+  },
+  "62": {
+    "name": "Ložisko nerostů",
+    "text": "Vezmi si 5 oceli.",
+    "en": "Mineral Deposit",
+    "engine": "Mineral Deposit"
+  },
+  "63": {
+    "name": "Těžební výprava",
+    "text": "Zvyš obsah kyslíku o jeden procentní bod a vezmi si 2 oceli. Jednomu hráči můžeš odstranit až 2 rostliny.",
+    "en": "Mining Expedition",
+    "engine": "Mining Expedition"
+  },
+  "64": {
+    "name": "Důlní oblast",
+    "text": "Polož důlní oblast vedle své destičky na pole s bonusem oceli nebo titanu. K bonusu za umístění zvyš také produkci zobrazeného kovu o 1.",
+    "en": "Mining Area",
+    "engine": "Mining Area"
+  },
+  "65": {
+    "name": "Stavební průmysl",
+    "text": "Sniž svou produkci energie o 1 a zvyš produkci oceli o 2.",
+    "en": "Building Industries",
+    "engine": "Building Industries"
+  },
+  "66": {
+    "name": "Rezervace pozemku",
+    "text": "Označ volné nevyhrazené pole svou kostičkou. Později tam můžeš položit destičku pouze ty. Samotné označení nepřináší bonus za umístění.",
+    "en": "Land Claim",
+    "engine": "Land Claim"
+  },
+  "67": {
+    "name": "Těžební práva",
+    "text": "Polož těžební destičku na pole s bonusem oceli nebo titanu. K bonusu za umístění zvyš také produkci zobrazeného kovu o 1.",
+    "en": "Mining Rights",
+    "engine": "Mining Rights"
+  },
+  "68": {
+    "name": "Sponzoři",
+    "text": "Zvyš svůj příjem o 2.",
+    "en": "Sponsors",
+    "engine": "Sponsors"
+  },
+  "69": {
+    "name": "Elektromagnetický katapult",
+    "text": "Obsah kyslíku musí být nejvýše 8 %. Sniž svou produkci energie o 1. Jednou za generaci můžeš prodat 1 rostlinu nebo 1 ocel za 7 M€. Na konci hry získáš 1 VB.",
+    "en": "Electro Catapult",
+    "engine": "Electro Catapult"
+  },
+  "70": {
+    "name": "Pozemský katapult",
+    "text": "Všechny další karty hraješ se slevou 2 M€. Na konci hry získáš 2 VB.",
+    "en": "Earth Catapult",
+    "engine": "Earth Catapult"
+  },
+  "71": {
+    "name": "Pokročilé slitiny",
+    "text": "Při placení má každá tvá ocel i každý tvůj titan hodnotu o 1 M€ vyšší.",
+    "en": "Advanced Alloys",
+    "engine": "Advanced Alloys"
+  },
+  "72": {
+    "name": "Ptáci",
+    "text": "Obsah kyslíku musí být alespoň 13 %. Jednomu hráči sniž produkci rostlin o 2. Jednou za generaci sem můžeš přidat 1 zvíře. Každé zdejší zvíře přináší 1 VB.",
+    "en": "Birds",
+    "engine": "Birds"
+  },
+  "73": {
+    "name": "Marťanská univerzita",
+    "text": "Za každý symbol vědy, který vyložíš, můžeš odhodit kartu z ruky a dobrat si novou. Platí už pro symbol na této kartě. Na konci hry získáš 1 VB.",
+    "en": "Mars University",
+    "engine": "Mars University"
+  },
+  "74": {
+    "name": "Virové stimulátory",
+    "text": "Za každý symbol rostlin, mikrobů nebo zvířat na právě zahrané kartě si vezmi 1 rostlinu, nebo na právě zahranou kartu přidej 1 zdroj, který se na ní uchovává. Platí už při vyložení stimulátorů.",
+    "en": "Viral Enhancers",
+    "engine": "Viral Enhancers"
+  },
+  "75": {
+    "name": "Odtažení komety",
+    "text": "Vezmi si 2 rostliny, zvyš obsah kyslíku o jeden procentní bod a umísti oceán.",
+    "en": "Towing a Comet",
+    "engine": "Towing A Comet"
+  },
+  "76": {
+    "name": "Orbitální zrcadla",
+    "text": "Jednou za generaci můžeš zaplatit 7 M€ a zvýšit svou produkci energie o 1.",
+    "en": "Space Mirrors",
+    "engine": "Space Mirrors"
+  },
+  "77": {
+    "name": "Energie slunečního větru",
+    "text": "Zvyš svou produkci energie o 1 a vezmi si 2 titany.",
+    "en": "Solar Wind Power",
+    "engine": "Solar Wind Power"
+  },
+  "78": {
+    "name": "Ledový asteroid",
+    "text": "Umísti 2 oceány.",
+    "en": "Ice Asteroid",
+    "engine": "Ice Asteroid"
+  },
+  "79": {
+    "name": "Kvantový extraktor",
+    "text": "Musíš mít alespoň 4 symboly vědy. Zvyš svou produkci energie o 4. Další karty se symbolem vesmíru hraješ se slevou 2 M€.",
+    "en": "Quantum Extractor",
+    "engine": "Quantum Extractor"
+  },
+  "80": {
+    "name": "Obří ledový asteroid",
+    "text": "Zvyš teplotu o 4 °C a umísti 2 oceány. Jednomu hráči můžeš odstranit až 6 rostlin.",
+    "en": "Giant Ice Asteroid",
+    "engine": "Giant Ice Asteroid"
+  },
+  "81": {
+    "name": "Kolonie na Ganymedu",
+    "text": "Umísti město na vyhrazené pole Ganymedes mimo povrch Marsu. Za každý svůj symbol Jupiteru včetně tohoto získáš 1 VB.",
+    "en": "Ganymede Colony",
+    "engine": "Ganymede Colony"
+  },
+  "82": {
+    "name": "Trestanecké doly na Callistu",
+    "text": "Zvyš svůj příjem o 3. Na konci hry získáš 2 VB.",
+    "en": "Callisto Penal Mines",
+    "engine": "Callisto Penal Mines"
+  },
+  "83": {
+    "name": "Obří vesmírné zrcadlo",
+    "text": "Zvyš svou produkci energie o 3.",
+    "en": "Giant Space Mirror",
+    "engine": "Giant Space Mirror"
+  },
+  "84": {
+    "name": "Sonda za Neptunem",
+    "text": "Na konci hry získáš 1 VB.",
+    "en": "Trans-Neptune Probe",
+    "engine": "Trans-Neptune Probe"
+  },
+  "85": {
+    "name": "Obchodní čtvrť",
+    "text": "Umísti obchodní čtvrť, sniž svou produkci energie o 1 a zvyš příjem o 4. Každé sousední město ti přinese 1 VB.",
+    "en": "Commercial District",
+    "engine": "Commercial District"
+  },
+  "86": {
+    "name": "Roboti v průmyslu",
+    "text": "Vyber svou vyloženou kartu se symbolem stavby. Znovu proveď všechny změny v jejím produkčním rámečku včetně případného snížení produkce. Jiné části karty se neopakují.",
+    "en": "Robotic Workforce",
+    "engine": "Robotic Workforce"
+  },
+  "87": {
+    "name": "Trávy",
+    "text": "Teplota musí být alespoň −16 °C. Zvyš svou produkci rostlin o 1 a vezmi si 3 rostliny.",
+    "en": "Grass",
+    "engine": "Grass"
+  },
+  "88": {
+    "name": "Vřes",
+    "text": "Teplota musí být alespoň −14 °C. Zvyš svou produkci rostlin o 1 a vezmi si 1 rostlinu.",
+    "en": "Heather",
+    "engine": "Heather"
+  },
+  "89": {
+    "name": "Peroxidová elektrárna",
+    "text": "Sniž svůj příjem o 1 a zvyš svou produkci energie o 2.",
+    "en": "Peroxide Power",
+    "engine": "Peroxide Power"
+  },
+  "90": {
+    "name": "Výzkum",
+    "text": "Dober si 2 karty. Dva symboly vědy na této kartě se vyhodnocují jednotlivě. Na konci hry získáš 1 VB.",
+    "en": "Research",
+    "engine": "Research"
+  },
+  "91": {
+    "name": "Genová oprava",
+    "text": "Musíš mít alespoň 3 symboly vědy. Zvyš svůj příjem o 2. Na konci hry získáš 2 VB.",
+    "en": "Gene Repair",
+    "engine": "Gene Repair"
+  },
+  "92": {
+    "name": "Těžební průmysl na Io",
+    "text": "Zvyš svou produkci titanu i příjem, obojí o 2. Za každý svůj symbol Jupiteru včetně tohoto získáš 1 VB.",
+    "en": "Io Mining Industries",
+    "engine": "Io Mining Industries"
+  },
+  "93": {
+    "name": "Keře",
+    "text": "Teplota musí být alespoň −10 °C. Zvyš svou produkci rostlin o 2 a vezmi si 2 rostliny.",
+    "en": "Bushes",
+    "engine": "Bushes"
+  },
+  "94": {
+    "name": "Přeměna hmoty",
+    "text": "Musíš mít alespoň 5 symbolů vědy. Zvyš svou produkci energie o 6. Další karty se symbolem vesmíru hraješ se slevou 2 M€.",
+    "en": "Mass Converter",
+    "engine": "Mass Converter"
+  },
+  "95": {
+    "name": "Fyzikální komplex",
+    "text": "Jednou za generaci můžeš vydat 6 energie a přidat sem 1 vědecký zdroj. Každý zdejší vědecký zdroj přináší 2 VB.",
+    "en": "Physics Complex",
+    "engine": "Physics Complex"
+  },
+  "96": {
+    "name": "Skleníky",
+    "text": "Vezmi si 1 rostlinu za každé město ve hře včetně měst mimo Mars.",
+    "en": "Greenhouses",
+    "engine": "Greenhouses"
+  },
+  "97": {
+    "name": "Jaderná zóna",
+    "text": "Umísti destičku jaderné zóny a zvyš teplotu o 4 °C. Na konci hry ztrácíš 2 VB.",
+    "en": "Nuclear Zone",
+    "engine": "Nuclear Zone"
+  },
+  "98": {
+    "name": "Tropické letovisko",
+    "text": "Sniž svou produkci tepla o 2 a zvyš příjem o 3. Na konci hry získáš 2 VB.",
+    "en": "Tropical Resort",
+    "engine": "Tropical Resort"
+  },
+  "99": {
+    "name": "Mýtná stanice",
+    "text": "Zvyš svůj příjem o 1 za každý vyložený symbol vesmíru všech soupeřů dohromady.",
+    "en": "Toll Station",
+    "engine": "Toll Station"
+  },
+  "100": {
+    "name": "Generátory na palivo",
+    "text": "Sniž svůj příjem o 1 a zvyš svou produkci energie o 1.",
+    "en": "Fueled Generators",
+    "engine": "Fueled Generators"
+  },
+  "101": {
+    "name": "Železárny",
+    "text": "Jednou za generaci můžeš vydat 4 energie. Získáš 1 ocel a zvýšíš obsah kyslíku o jeden procentní bod.",
+    "en": "Ironworks",
+    "engine": "Ironworks"
+  },
+  "102": {
+    "name": "Elektrická síť",
+    "text": "Zvyš svou produkci energie o 1 za každý svůj symbol energie včetně symbolu na této kartě.",
+    "en": "Power Grid",
+    "engine": "Power Grid"
+  },
+  "103": {
+    "name": "Ocelárny",
+    "text": "Jednou za generaci můžeš vydat 4 energie. Získáš 2 oceli a zvýšíš obsah kyslíku o jeden procentní bod.",
+    "en": "Steelworks",
+    "engine": "Steelworks"
+  },
+  "104": {
+    "name": "Zpracování rud",
+    "text": "Jednou za generaci můžeš vydat 4 energie. Získáš 1 titan a zvýšíš obsah kyslíku o jeden procentní bod.",
+    "en": "Ore Processor",
+    "engine": "Ore Processor"
+  },
+  "105": {
+    "name": "Kancelář na Zemi",
+    "text": "Další karty se symbolem Země hraješ se slevou 3 M€.",
+    "en": "Earth Office",
+    "engine": "Earth Office"
+  },
+  "106": {
+    "name": "Akvizice firmy",
+    "text": "Zvyš svůj příjem o 3.",
+    "en": "Acquired Company",
+    "engine": "Acquired Company"
+  },
+  "107": {
+    "name": "Mediální archivy",
+    "text": "Vezmi si 1 M€ za každou dosud zahranou událost všech hráčů dohromady.",
+    "en": "Media Archives",
+    "engine": "Media Archives"
+  },
+  "108": {
+    "name": "Otevřené město",
+    "text": "Obsah kyslíku musí být alespoň 12 %. Založ město a vezmi si 2 rostliny. Sniž svou produkci energie o 1 a zvyš příjem o 4. Na konci hry získáš 1 VB.",
+    "en": "Open City",
+    "engine": "Open City"
+  },
+  "109": {
+    "name": "Mediální skupina",
+    "text": "Pokaždé, když zahraješ událost, získáš 3 M€.",
+    "en": "Media Group",
+    "engine": "Media Group"
+  },
+  "110": {
+    "name": "Obchodní síť",
+    "text": "Sniž svůj příjem o 1. Jednou za generaci se můžeš podívat na vrchní kartu balíčku. Buď ji za 3 M€ vezmi do ruky, nebo ji odhoď.",
+    "en": "Business Network",
+    "engine": "Business Network"
+  },
+  "111": {
+    "name": "Obchodní kontakty",
+    "text": "Prohlédni si 4 vrchní karty z balíčku. Dvě si nech zdarma a dvě odhoď.",
+    "en": "Business Contacts",
+    "engine": "Business Contacts"
+  },
+  "112": {
+    "name": "Podplacený výbor",
+    "text": "Zvyš svůj TR o 2. Na konci hry ztrácíš 2 VB.",
+    "en": "Bribed Committee",
+    "engine": "Bribed Committee"
+  },
+  "113": {
+    "name": "Solární energie",
+    "text": "Zvyš svou produkci energie o 1. Na konci hry získáš 1 VB.",
+    "en": "Solar Power",
+    "engine": "Solar Power"
+  },
+  "114": {
+    "name": "Dýchací filtry",
+    "text": "Obsah kyslíku musí být alespoň 7 %. Na konci hry získáš 2 VB.",
+    "en": "Breathing Filters",
+    "engine": "Breathing Filters"
+  },
+  "115": {
+    "name": "Umělá fotosyntéza",
+    "text": "Zvyš buď svou produkci rostlin o 1, nebo svou produkci energie o 2.",
+    "en": "Artificial Photosynthesis",
+    "engine": "Artificial Photosynthesis"
+  },
+  "116": {
+    "name": "Umělé jezero",
+    "text": "Teplota musí být alespoň −6 °C. Umísti oceán na volné pozemní pole, které běžně připouští stavbu na souši. Na konci hry získáš 1 VB.",
+    "en": "Artificial Lake",
+    "engine": "Artificial Lake"
+  },
+  "117": {
+    "name": "Geotermální energie",
+    "text": "Zvyš svou produkci energie o 2.",
+    "en": "Geothermal Power",
+    "engine": "Geothermal Power"
+  },
+  "118": {
+    "name": "Zemědělství",
+    "text": "Teplota musí být alespoň 4 °C. Vezmi si 2 rostliny. Svůj příjem i produkci rostlin zvyš o 2. Na konci hry získáš 2 VB.",
+    "en": "Farming",
+    "engine": "Farming"
+  },
+  "119": {
+    "name": "Protiprachová těsnění",
+    "text": "Na Marsu smějí být nejvýše 3 oceány. Na konci hry získáš 1 VB.",
+    "en": "Dust Seals",
+    "engine": "Dust Seals"
+  },
+  "120": {
+    "name": "Souměstí",
+    "text": "Umísti město na pole sousedící alespoň se dvěma městy. Sniž svou produkci energie o 1 a zvyš příjem o 2.",
+    "en": "Urbanized Area",
+    "engine": "Urbanized Area"
+  },
+  "121": {
+    "name": "Sabotáž",
+    "text": "Vyber jednoho hráče. Můžeš mu odebrat až 3 titany, až 4 oceli, nebo až 7 M€.",
+    "en": "Sabotage",
+    "engine": "Sabotage"
+  },
+  "122": {
+    "name": "Mech",
+    "text": "Na Marsu musejí být alespoň 3 oceány. Vydej 1 rostlinu a zvyš svou produkci rostlin o 1.",
+    "en": "Moss",
+    "engine": "Moss"
+  },
+  "123": {
+    "name": "Průmyslové centrum",
+    "text": "Polož průmyslové centrum vedle některého města. Jednou za generaci můžeš zaplatit 7 M€ a zvýšit svou produkci oceli o 1.",
+    "en": "Industrial Center",
+    "engine": "Industrial Center"
+  },
+  "124": {
+    "name": "Najatí nájezdníci",
+    "text": "Jednomu hráči můžeš vzít až 2 oceli nebo až 3 M€ a přidat si je do své zásoby.",
+    "en": "Hired Raiders",
+    "engine": "Hired Raiders"
+  },
+  "125": {
+    "name": "Hackeři",
+    "text": "Sniž svou produkci energie o 1. Jednomu hráči sniž příjem o 2 a sobě jej o 2 zvyš. Na konci hry ztrácíš 1 VB.",
+    "en": "Hackers",
+    "engine": "Hackers"
+  },
+  "126": {
+    "name": "Továrny na skleníkové plyny",
+    "text": "Sniž svou produkci energie o 1 a zvyš produkci tepla o 4.",
+    "en": "GHG Factories",
+    "engine": "GHG Factories"
+  },
+  "127": {
+    "name": "Podzemní nádrž",
+    "text": "Umísti oceán.",
+    "en": "Subterranean Reservoir",
+    "engine": "Subterranean Reservoir"
+  },
+  "128": {
+    "name": "Ekologická zóna",
+    "text": "Musíš vlastnit alespoň jednu zeleň. Zónu umísti vedle libovolné zeleně. Za každý právě vyložený symbol rostlin nebo zvířat přidej sem 1 zvíře. Dva symboly na této kartě přinesou při vyložení 2 zvířata. Každá 2 zdejší zvířata přinášejí 1 VB.",
+    "en": "Ecological Zone",
+    "engine": "Ecological Zone"
+  },
+  "129": {
+    "name": "Vzducholodě",
+    "text": "Obsah kyslíku musí být alespoň 5 %. Zvyš svůj příjem o 1 za každé město na povrchu Marsu. Na konci hry získáš 1 VB.",
+    "en": "Zeppelins",
+    "engine": "Zeppelins"
+  },
+  "130": {
+    "name": "Žížaly",
+    "text": "Obsah kyslíku musí být alespoň 4 %. Zvyš svou produkci rostlin o 1 za každé dva své symboly mikrobů. Započítej i tuto kartu.",
+    "en": "Worms",
+    "engine": "Worms"
+  },
+  "131": {
+    "name": "Rozkladači",
+    "text": "Obsah kyslíku musí být alespoň 3 %. Za každý symbol rostlin, zvířat či mikrobů, který vyložíš, přidej sem 1 mikrob. Platí už při vyložení této karty. Každé 3 zdejší mikroby přinášejí 1 VB.",
+    "en": "Decomposers",
+    "engine": "Decomposers"
+  },
+  "132": {
+    "name": "Fúzní elektrárna",
+    "text": "Musíš mít alespoň 2 symboly energie. Zvyš svou produkci energie o 3.",
+    "en": "Fusion Power",
+    "engine": "Fusion Power"
+  },
+  "133": {
+    "name": "Symbiotická houba",
+    "text": "Teplota musí být alespoň −14 °C. Jednou za generaci můžeš přidat 1 mikrob na jinou svou kartu, na které se mikrobi uchovávají.",
+    "en": "Symbiotic Fungus",
+    "engine": "Symbiotic Fungus"
+  },
+  "134": {
+    "name": "Mrazuvzdorná houba",
+    "text": "Teplota musí být nejvýše −10 °C. Jednou za generaci si můžeš vzít 1 rostlinu, nebo přidat 2 mikroby na jinou svou kartu pro mikroby.",
+    "en": "Extreme-Cold Fungus",
+    "engine": "Extreme-Cold Fungus"
+  },
+  "135": {
+    "name": "Pokročilé ekosystémy",
+    "text": "Musíš mít alespoň jeden symbol rostlin, jeden symbol mikrobů a jeden symbol zvířat. Na konci hry získáš 3 VB.",
+    "en": "Advanced Ecosystems",
+    "engine": "Advanced Ecosystems"
+  },
+  "136": {
+    "name": "Velká přehrada",
+    "text": "Na Marsu musejí být alespoň 4 oceány. Zvyš svou produkci energie o 2. Na konci hry získáš 1 VB.",
+    "en": "Great Dam",
+    "engine": "Great Dam"
+  },
+  "137": {
+    "name": "Kartel",
+    "text": "Zvyš svůj příjem o 1 za každý svůj symbol Země včetně symbolu na této kartě.",
+    "en": "Cartel",
+    "engine": "Cartel"
+  },
+  "138": {
+    "name": "Povrchový důl",
+    "text": "Sniž svou produkci energie o 2, zvyš produkci oceli o 2 a titanu o 1. Zvyš obsah kyslíku o dva procentní body.",
+    "en": "Strip Mine",
+    "engine": "Strip Mine"
+  },
+  "139": {
+    "name": "Vlnová elektrárna",
+    "text": "Na Marsu musejí být alespoň 3 oceány. Zvyš svou produkci energie o 1. Na konci hry získáš 1 VB.",
+    "en": "Wave Power",
+    "engine": "Wave Power"
+  },
+  "140": {
+    "name": "Lávové proudy",
+    "text": "Zvyš teplotu o 4 °C. Lávu umísti na jedno ze sopečných polí Tharsis Tholus, Ascraeus Mons, Pavonis Mons nebo Arsia Mons.",
+    "en": "Lava Flows",
+    "engine": "Lava Flows"
+  },
+  "141": {
+    "name": "Elektrárna",
+    "text": "Zvyš svou produkci energie o 1.",
+    "en": "Power Plant",
+    "engine": "Power Plant"
+  },
+  "142": {
+    "name": "Hlubinný vrt",
+    "text": "Polož destičku hlubinného vrtu na volné pole vyhrazené pro oceán. Zvyš svou produkci tepla o 4.",
+    "en": "Mohole Area",
+    "engine": "Mohole Area"
+  },
+  "143": {
+    "name": "Velký konvoj",
+    "text": "Umísti oceán a dober si 2 karty. Pak si vezmi 5 rostlin, nebo přidej 4 zvířata na jinou svou kartu pro zvířata. Na konci hry získáš 2 VB.",
+    "en": "Large Convoy",
+    "engine": "Large Convoy"
+  },
+  "144": {
+    "name": "Titanový důl",
+    "text": "Zvyš svou produkci titanu o 1.",
+    "en": "Titanium Mine",
+    "engine": "Titanium Mine"
+  },
+  "145": {
+    "name": "Energie z tektonického napětí",
+    "text": "Musíš mít alespoň 2 symboly vědy. Zvyš svou produkci energie o 3. Na konci hry získáš 1 VB.",
+    "en": "Tectonic Stress Power",
+    "engine": "Tectonic Stress Power"
+  },
+  "146": {
+    "name": "Dusíkomilný mech",
+    "text": "Na Marsu musejí být alespoň 3 oceány. Vydej 2 rostliny a zvyš svou produkci rostlin o 2.",
+    "en": "Nitrophilic Moss",
+    "engine": "Nitrophilic Moss"
+  },
+  "147": {
+    "name": "Býložravci",
+    "text": "Obsah kyslíku musí být alespoň 8 %. Jednomu hráči sniž produkci rostlin o 1 a přidej sem 1 zvíře. Kdykoli umístíš zeleň, přidej sem další zvíře. Každá 2 zdejší zvířata přinášejí 1 VB.",
+    "en": "Herbivores",
+    "engine": "Herbivores"
+  },
+  "148": {
+    "name": "Hmyz",
+    "text": "Obsah kyslíku musí být alespoň 6 %. Zvyš svou produkci rostlin o 1 za každý svůj symbol rostlin.",
+    "en": "Insects",
+    "engine": "Insects"
+  },
+  "149": {
+    "name": "Ředitelův oblíbený projekt",
+    "text": "Vyber svou kartu, na které už leží alespoň 1 zdroj. Přidej na ni 1 zdroj stejného druhu.",
+    "en": "CEO's Favourite Project",
+    "engine": "CEOs Favorite Project"
+  },
+  "150": {
+    "name": "Antigravitační technologie",
+    "text": "Musíš mít alespoň 7 symbolů vědy. Všechny další karty hraješ se slevou 2 M€. Na konci hry získáš 3 VB.",
+    "en": "Anti-Gravity Technology",
+    "engine": "Anti-Gravity Technology"
+  },
+  "151": {
+    "name": "Investiční úvěr",
+    "text": "Sniž svůj příjem o 1 a ihned si vezmi 10 M€.",
+    "en": "Investment Loan",
+    "engine": "Investment Loan"
+  },
+  "152": {
+    "name": "Izolace",
+    "text": "Vyber, o kolik stupňů snížíš svou produkci tepla. O stejný počet zvyš svůj příjem.",
+    "en": "Insulation",
+    "engine": "Insulation"
+  },
+  "153": {
+    "name": "Adaptační technologie",
+    "text": "U požadavků karet na teplotu, kyslík nebo oceány máš toleranci dvou stupňů na příslušné stupnici. U teploty to odpovídá 4 °C. Na konci hry získáš 1 VB.",
+    "en": "Adaptation Technology",
+    "engine": "Adaptation Technology"
+  },
+  "154": {
+    "name": "Smlouva o správě",
+    "text": "Teplota musí být alespoň 0 °C. Jednou za generaci můžeš vydat 8 tepla a získat 1 TR.",
+    "en": "Caretaker Contract",
+    "engine": "Caretaker Contract"
+  },
+  "155": {
+    "name": "Upravené mikroorganismy",
+    "text": "Teplota musí být nejvýše −14 °C. Zvyš svou produkci rostlin o 2.",
+    "en": "Designed Microorganisms",
+    "engine": "Designed Micro-organisms"
+  },
+  "156": {
+    "name": "Standardizovaná technologie",
+    "text": "Po každém zaplaceném standardním projektu získáš 3 M€. Prodej patentů tuto odměnu nespouští.",
+    "en": "Standard Technology",
+    "engine": "Standard Technology"
+  },
+  "157": {
+    "name": "Bakterie redukující dusitany",
+    "text": "Při vyložení sem přidej 3 mikroby. Jednou za generaci sem můžeš přidat 1 mikrob, nebo odsud odebrat 3 mikroby a získat 1 TR.",
+    "en": "Nitrite Reducing Bacteria",
+    "engine": "Nitrite Reducing Bacteria"
+  },
+  "158": {
+    "name": "Průmysloví mikrobi",
+    "text": "Zvyš svou produkci energie i oceli, obojí o 1.",
+    "en": "Industrial Microbes",
+    "engine": "Industrial Microbes"
+  },
+  "159": {
+    "name": "Lišejníky",
+    "text": "Teplota musí být alespoň −24 °C. Zvyš svou produkci rostlin o 1.",
+    "en": "Lichen",
+    "engine": "Lichen"
+  },
+  "160": {
+    "name": "Energetické konsorcium",
+    "text": "Musíš mít alespoň 2 symboly energie. Jednomu hráči sniž produkci energie o 1 a sobě ji o 1 zvyš.",
+    "en": "Power Supply Consortium",
+    "engine": "Power Supply Consortium"
+  },
+  "161": {
+    "name": "Konvoj z Europy",
+    "text": "Umísti oceán a dober si 1 kartu.",
+    "en": "Convoy From Europa",
+    "engine": "Convoy From Europa"
+  },
+  "162": {
+    "name": "Dovoz skleníkových plynů",
+    "text": "Zvyš svou produkci tepla o 1 a vezmi si 3 tepla.",
+    "en": "Imported GHG",
+    "engine": "Imported GHG"
+  },
+  "163": {
+    "name": "Dovoz dusíku",
+    "text": "Získej 1 TR a 4 rostliny. Na jinou svou kartu pro mikroby přidej 3 mikroby a na jinou svou kartu pro zvířata přidej 2 zvířata.",
+    "en": "Imported Nitrogen",
+    "engine": "Imported Nitrogen"
+  },
+  "164": {
+    "name": "Mikroturbíny",
+    "text": "Zvyš svou produkci tepla o 1.",
+    "en": "Micro-Mills",
+    "engine": "Micro-Mills"
+  },
+  "165": {
+    "name": "Generátory magnetického pole",
+    "text": "Sniž svou produkci energie o 4. Zvyš svou produkci rostlin o 2 a svůj TR o 3.",
+    "en": "Magnetic Field Generators",
+    "engine": "Magnetic Field Generators"
+  },
+  "166": {
+    "name": "Raketoplány",
+    "text": "Obsah kyslíku musí být alespoň 5 %. Sniž svou produkci energie o 1 a zvyš příjem o 2. Další karty se symbolem vesmíru hraješ se slevou 2 M€. Na konci hry získáš 1 VB.",
+    "en": "Shuttles",
+    "engine": "Shuttles"
+  },
+  "167": {
+    "name": "Dovoz pokročilých skleníkových plynů",
+    "text": "Zvyš svou produkci tepla o 2.",
+    "en": "Import of Advanced GHG",
+    "engine": "Import of Advanced GHG"
+  },
+  "168": {
+    "name": "Větrné elektrárny",
+    "text": "Obsah kyslíku musí být alespoň 7 %. Zvyš svou produkci energie o 1. Na konci hry získáš 1 VB.",
+    "en": "Windmills",
+    "engine": "Windmills"
+  },
+  "169": {
+    "name": "Hospodaření v tundře",
+    "text": "Teplota musí být alespoň −6 °C. Zvyš svou produkci rostlin o 1 a příjem o 2. Vezmi si 1 rostlinu. Na konci hry získáš 2 VB.",
+    "en": "Tundra Farming",
+    "engine": "Tundra Farming"
+  },
+  "170": {
+    "name": "Čpavkový asteroid brzděný atmosférou",
+    "text": "Zvyš svou produkci tepla o 3 a produkci rostlin o 1. Na jinou svou kartu pro mikroby přidej 2 mikroby.",
+    "en": "Aerobraked Ammonia Asteroid",
+    "engine": "Aerobraked Ammonia Asteroid"
+  },
+  "171": {
+    "name": "Magnetický štít",
+    "text": "Sniž svou produkci energie o 2, zvyš produkci rostlin o 1 a získáš 1 TR.",
+    "en": "Magnetic Field Dome",
+    "engine": "Magnetic Field Dome"
+  },
+  "172": {
+    "name": "Domácí mazlíčci",
+    "text": "Při vyložení sem přidej 1 zvíře. Každé nové město kohokoli ve hře přidá další zvíře. Zvířata jsou na této kartě trvale chráněná před odebráním. Každá 2 přinášejí 1 VB.",
+    "en": "Pets",
+    "engine": "Pets"
+  },
+  "173": {
+    "name": "Chráněná stanoviště",
+    "text": "Tvé zásoby rostlin i zvířata a mikrobi na tvých kartách jsou chráněny před odebráním soupeři.",
+    "en": "Protected Habitats",
+    "engine": "Protected Habitats"
+  },
+  "174": {
+    "name": "Chráněné údolí",
+    "text": "Zvyš svůj příjem o 2. Polož zeleň na volné pole vyhrazené pro oceán, i kdyby nesousedilo s tvým územím. Zvyš obsah kyslíku o jeden procentní bod.",
+    "en": "Protected Valley",
+    "engine": "Protected Valley"
+  },
+  "175": {
+    "name": "Satelity",
+    "text": "Zvyš svůj příjem o 1 za každý svůj symbol vesmíru včetně symbolu na této kartě.",
+    "en": "Satellites",
+    "engine": "Satellites"
+  },
+  "176": {
+    "name": "Farma v Noctis",
+    "text": "Teplota musí být alespoň −20 °C. Zvyš svůj příjem o 1 a vezmi si 2 rostliny. Na konci hry získáš 1 VB.",
+    "en": "Noctis Farming",
+    "engine": "Noctis Farming"
+  },
+  "177": {
+    "name": "Elektrolýza vody",
+    "text": "Na Marsu musejí být alespoň 2 oceány. Jednou za generaci můžeš vydat 3 energie a zvýšit obsah kyslíku o jeden procentní bod.",
+    "en": "Water Splitting Plant",
+    "engine": "Water Splitting Plant"
+  },
+  "178": {
+    "name": "Lapače tepla",
+    "text": "Jednomu hráči sniž produkci tepla o 2. Svou produkci energie zvyš o 1. Na konci hry ztrácíš 1 VB.",
+    "en": "Heat Trappers",
+    "engine": "Heat Trappers"
+  },
+  "179": {
+    "name": "Výroba půdy",
+    "text": "Sniž svou produkci energie o 1 a zvyš produkci rostlin o 1. Na konci hry získáš 1 VB.",
+    "en": "Soil Factory",
+    "engine": "Soil Factory"
+  },
+  "180": {
+    "name": "Továrna na palivo",
+    "text": "Sniž svou produkci energie o 1. Zvyš svou produkci titanu i příjem, obojí o 1.",
+    "en": "Fuel Factory",
+    "engine": "Fuel Factory"
+  },
+  "181": {
+    "name": "Tání polárních čepiček",
+    "text": "Teplota musí být alespoň 2 °C. Umísti oceán.",
+    "en": "Ice cap Melting",
+    "engine": "Ice Cap Melting"
+  },
+  "182": {
+    "name": "Korporátní pevnost",
+    "text": "Založ město, sniž svou produkci energie o 1 a zvyš příjem o 3. Na konci hry ztrácíš 2 VB.",
+    "en": "Corporate Stronghold",
+    "engine": "Corporate Stronghold"
+  },
+  "183": {
+    "name": "Spalovny biomasy",
+    "text": "Obsah kyslíku musí být alespoň 6 %. Jednomu hráči sniž produkci rostlin o 1. Svou produkci energie zvyš o 2. Na konci hry ztrácíš 1 VB.",
+    "en": "Biomass Combustors",
+    "engine": "Biomass Combustors"
+  },
+  "184": {
+    "name": "Dobytek",
+    "text": "Obsah kyslíku musí být alespoň 9 %. Sniž svou produkci rostlin o 1 a zvyš příjem o 2. Jednou za generaci sem můžeš přidat 1 zvíře. Každé zdejší zvíře přináší 1 VB.",
+    "en": "Livestock",
+    "engine": "Livestock"
+  },
+  "185": {
+    "name": "Konference na Olympu",
+    "text": "Za každý vyložený symbol vědy, včetně tohoto, můžeš přidat sem 1 vědecký zdroj, nebo odsud 1 vědecký zdroj odebrat a dobrat si kartu. Na konci hry získáš 1 VB.",
+    "en": "Olympus Conference",
+    "engine": "Olympus Conference"
+  },
+  "186": {
+    "name": "Protiradiační obleky",
+    "text": "Ve hře musejí být alespoň dvě města. Zvyš svůj příjem o 1. Na konci hry získáš 1 VB.",
+    "en": "Rad-Suits",
+    "engine": "Rad-Suits"
+  },
+  "187": {
+    "name": "Čerpání podzemní vody",
+    "text": "Jednou za generaci můžeš za 8 M€ umístit oceán. Částku lze hradit také ocelí.",
+    "en": "Aquifer Pumping",
+    "engine": "Aquifer Pumping"
+  },
+  "188": {
+    "name": "Záplavy",
+    "text": "Umísti oceán. Majiteli jedné destičky sousedící s tímto oceánem můžeš odebrat až 4 M€. Na konci hry ztrácíš 1 VB.",
+    "en": "Flooding",
+    "engine": "Flooding"
+  },
+  "189": {
+    "name": "Úspory energie",
+    "text": "Zvyš svou produkci energie o 1 za každé město ve hře včetně měst mimo Mars.",
+    "en": "Energy Saving",
+    "engine": "Energy Saving"
+  },
+  "190": {
+    "name": "Místní zachycování tepla",
+    "text": "Vydej 5 tepla. Vyber si 4 rostliny, nebo přidej 2 zvířata na jinou svou kartu pro zvířata.",
+    "en": "Local Heat Trapping",
+    "engine": "Local Heat Trapping"
+  },
+  "191": {
+    "name": "Těžba z permafrostu",
+    "text": "Teplota musí být alespoň −8 °C. Umísti oceán.",
+    "en": "Permafrost extraction",
+    "engine": "Permafrost Extraction"
+  },
+  "192": {
+    "name": "Vynálezecká soutěž",
+    "text": "Prohlédni si 3 vrchní karty z balíčku. Jednu si nech zdarma a zbylé dvě odhoď.",
+    "en": "Invention Contest",
+    "engine": "Invention Contest"
+  },
+  "193": {
+    "name": "Plantáž",
+    "text": "Musíš mít alespoň 2 symboly vědy. Umísti zeleň a zvyš obsah kyslíku o jeden procentní bod.",
+    "en": "Plantation",
+    "engine": "Plantation"
+  },
+  "194": {
+    "name": "Energetická infrastruktura",
+    "text": "Jednou za generaci můžeš prodat libovolné množství své energie za 1 M€ za jednotku.",
+    "en": "Power Infrastructure",
+    "engine": "Power Infrastructure"
+  },
+  "195": {
+    "name": "Smluvní dělníci",
+    "text": "Příští kartu, kterou zahraješ v této generaci, zlevni o 8 M€. Na konci hry ztrácíš 1 VB.",
+    "en": "Indentured Workers",
+    "engine": "Indentured Workers"
+  },
+  "196": {
+    "name": "Observatoř v Lagrangeově bodě",
+    "text": "Dober si 1 kartu. Na konci hry získáš 1 VB.",
+    "en": "Lagrange Observatory",
+    "engine": "Lagrange Observatory"
+  },
+  "197": {
+    "name": "Teraformace Ganymedu",
+    "text": "Získej 1 TR za každý svůj symbol Jupiteru včetně symbolu na této kartě. Na konci hry získáš 2 VB.",
+    "en": "Terraforming Ganymede",
+    "engine": "Terraforming Ganymede"
+  },
+  "198": {
+    "name": "Přistěhovalecké raketoplány",
+    "text": "Zvyš svůj příjem o 5. Za každou trojici měst ve hře včetně měst mimo Mars získáš 1 VB.",
+    "en": "Immigration Shuttles",
+    "engine": "Immigration Shuttles"
+  },
+  "199": {
+    "name": "Uzavřený prostor",
+    "text": "Umísti destičku uzavřeného prostoru. Jednou za generaci můžeš zaplatit 2 M€ a dobrat si kartu.",
+    "en": "Restricted Area",
+    "engine": "Restricted Area"
+  },
+  "200": {
+    "name": "Město přistěhovalců",
+    "text": "Sniž svou produkci energie o 1 a příjem o 2. Založ město. Za každé nově umístěné město kohokoli ve hře zvyš svůj příjem o 1, už i za toto město.",
+    "en": "Immigrant City",
+    "engine": "Immigrant City"
+  },
+  "201": {
+    "name": "Napojení na cizí rozvod",
+    "text": "Jednomu hráči sniž produkci energie o 1 a sobě ji o 1 zvyš. Na konci hry ztrácíš 1 VB.",
+    "en": "Energy Tapping",
+    "engine": "Energy Tapping"
+  },
+  "202": {
+    "name": "Podzemní detonace",
+    "text": "Jednou za generaci můžeš zaplatit 10 M€ a zvýšit svou produkci tepla o 2.",
+    "en": "Underground Detonations",
+    "engine": "Underground Detonations"
+  },
+  "203": {
+    "name": "Soletta",
+    "text": "Zvyš svou produkci tepla o 7.",
+    "en": "Soletta",
+    "engine": "Soletta"
+  },
+  "204": {
+    "name": "Ukázka technologie",
+    "text": "Dober si 2 karty.",
+    "en": "Technology Demonstration",
+    "engine": "Technology Demonstration"
+  },
+  "205": {
+    "name": "Radiochemický závod",
+    "text": "Sniž svou produkci energie o 1 a získej 2 TR.",
+    "en": "Rad-Chem Factory",
+    "engine": "Rad-chem Factory"
+  },
+  "206": {
+    "name": "Speciální konstrukce",
+    "text": "U příští karty, kterou zahraješ v této generaci, můžeš posunout požadavek na teplotu, kyslík či oceány až o dva stupně příslušné stupnice.",
+    "en": "Special Design",
+    "engine": "Special Design"
+  },
+  "207": {
+    "name": "Lékařská laboratoř",
+    "text": "Za každé dva své symboly staveb zvyš příjem o 1. Započítej i symbol na této kartě. Na konci hry získáš 1 VB.",
+    "en": "Medical Lab",
+    "engine": "Medical Lab"
+  },
+  "208": {
+    "name": "Centrála umělé inteligence",
+    "text": "Musíš mít alespoň 3 symboly vědy. Sniž svou produkci energie o 1. Jednou za generaci si můžeš dobrat 2 karty. Na konci hry získáš 1 VB.",
+    "en": "AI Central",
+    "engine": "AI Central"
+  },
+  "CrediCor": {
+    "name": "CrediCor",
+    "text": "Začínáš s 57 M€. Po zaplacení karty nebo standardního projektu s uvedenou cenou alespoň 20 M€ získáš zpět 4 M€. Rozhoduje cena před slevami.",
+    "en": "CrediCor",
+    "engine": "CrediCor"
+  },
+  "Ecoline": {
+    "name": "Ecoline",
+    "text": "Začínáš s 36 M€, 3 rostlinami a produkcí rostlin zvýšenou o 2. Na vlastní akci přeměny rostlin na zeleň ti stačí 7 rostlin.",
+    "en": "Ecoline",
+    "engine": "EcoLine"
+  },
+  "Helion": {
+    "name": "Helion",
+    "text": "Začínáš s 42 M€ a produkcí tepla zvýšenou o 3. Při platbě můžeš každé teplo utratit jako 1 M€.",
+    "en": "Helion",
+    "engine": "Helion"
+  },
+  "Interplanetary Cinematics": {
+    "name": "Meziplanetární filmová společnost",
+    "text": "Začínáš s 30 M€ a 20 oceli. Pokaždé, když zahraješ událost, získáš 2 M€.",
+    "en": "Interplanetary Cinematics",
+    "engine": "Interplanetary Cinematics"
+  },
+  "Inventrix": {
+    "name": "Inventrix",
+    "text": "Začínáš s 45 M€. Svou první akcí si dober 3 karty. Při hraní karet máš u požadavků na teplotu, kyslík a oceány toleranci dvou stupňů příslušné stupnice.",
+    "en": "Inventrix",
+    "engine": "Inventrix"
+  },
+  "Mining Guild": {
+    "name": "Těžařský cech",
+    "text": "Začínáš s 30 M€, 5 oceli a produkcí oceli zvýšenou o 1. Kdykoli za umístění destičky získáš vytištěný bonus oceli nebo titanu, zvyš svou produkci oceli o 1.",
+    "en": "Mining Guild",
+    "engine": "Mining Guild"
+  },
+  "PhoboLog": {
+    "name": "PhoboLog",
+    "text": "Začínáš s 23 M€ a 10 titany. Při placení má každý tvůj titan hodnotu o 1 M€ vyšší.",
+    "en": "PhoboLog",
+    "engine": "PhoboLog"
+  },
+  "Saturn Systems": {
+    "name": "Saturn Systems",
+    "text": "Začínáš s 42 M€ a produkcí titanu zvýšenou o 1. Za každý symbol Jupiteru, který vyloží kterýkoli hráč, zvyš svůj příjem o 1. Platí už pro symbol na tvé korporaci.",
+    "en": "Saturn Systems",
+    "engine": "Saturn Systems"
+  },
+  "Teractor": {
+    "name": "Teractor",
+    "text": "Začínáš s 60 M€. Karty se symbolem Země hraješ se slevou 3 M€.",
+    "en": "Teractor",
+    "engine": "Teractor"
+  },
+  "Tharsis Republic": {
+    "name": "Republika Tharsis",
+    "text": "Začínáš s 40 M€. Svou první akcí zdarma založ město. Když kterýkoli hráč postaví město na povrchu Marsu, zvyš svůj příjem o 1. Za každé vlastní nové město kdekoli získáš také 3 M€.",
+    "en": "Tharsis Republic",
+    "engine": "Tharsis Republic"
+  },
+  "ThorGate": {
+    "name": "ThorGate",
+    "text": "Začínáš s 48 M€ a produkcí energie zvýšenou o 1. Karty se symbolem energie a standardní projekt Elektrárna tě stojí o 3 M€ méně.",
+    "en": "ThorGate",
+    "engine": "Thorgate"
+  },
+  "United Nations Mars Initiative": {
+    "name": "Iniciativa OSN pro Mars",
+    "text": "Začínáš s 40 M€. Pokud se ti v této generaci již zvýšil TR, můžeš jednou za generaci utratit 3 M€ a zvýšit ho o další 1.",
+    "en": "United Nations Mars Initiative",
+    "engine": "United Nations Mars Initiative"
+  },
+  "Beginner Corporation": {
+    "name": "Základní korporace",
+    "text": "Začínáš s 42 M€. Všech 10 úvodních karet projektů si ponecháš zdarma.",
+    "en": "Beginner Corporation",
+    "engine": "Beginner Corporation"
+  }
+}

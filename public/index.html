@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="cs"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#111417"><meta name="description" content="Český herní stůl pro Mars: Teraformace. Veď korporaci, proměň Mars a zahraj si s přáteli nebo sólo."><meta name="referrer" content="no-referrer"><title>Mars · Teraformace</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><link rel="preload" href="vendor/BarlowCondensed-Bold.ttf" as="font" type="font/ttf" crossorigin>
+<script defer src="vendor/peerjs-1.5.5.min.js"></script><script defer src="vendor/mars-rules.js"></script><script defer src="js/mars-app.js"></script>
+</head><body>
+<a class="skip" href="#main">Přejít k obsahu</a>
+<header class="top"><div class="shell topbar"><button class="brand" data-do="home" aria-label="Mars Teraformace, hlavní stránka"><img src="icon.svg" alt=""><span>MARS<span class="brand-sub">TERAFORMACE</span></span></button>
+<nav aria-label="Hlavní navigace"><button class="nav active" data-do="home"><i data-icon="station"></i><span>Herní stůl</span></button><button class="nav" data-do="catalog"><i data-icon="cards"></i><span>Katalog karet</span></button><button class="nav" data-do="rules"><i data-icon="book"></i><span>Pravidla</span></button></nav>
+<button class="sound iconbtn" data-do="sound" aria-label="Zapnout zvuk" title="Zapnout zvuk" aria-pressed="false"><i data-icon="mute"></i></button></div></header>
+<main id="main" class="shell" tabindex="-1">
+<section id="home">
+<div class="hero"><img class="hero-img" src="art/outpost.webp" fetchpriority="high" alt="Výzkumná základna v kaňonu na povrchu Marsu"><div class="hero-cover"></div>
+<div class="hero-copy"><div class="overline orange"><span class="line"></span>Strategická desková hra</div><h1>MARS<span>TERAFORMACE</span></h1><p>Veď svou korporaci a proměň rudou planetu v nový domov. Každý projekt zanechá na Marsu stopu.</p>
+<div class="hero-buttons"><button class="btn primary" data-do="create"><i data-icon="plus"></i>Založit stůl</button><button class="btn glass" data-do="join"><i data-icon="link"></i>Připojit se</button></div>
+<div class="hero-links"><button class="linkbtn" data-do="solo"><i data-icon="play"></i>Sólová mise</button><button class="linkbtn" id="resume" data-do="resume" hidden><i data-icon="restore"></i>Pokračovat v partii</button></div></div>
+<div class="site-loc" aria-hidden="true"><span class="crosshair"></span><span>THARSIS<span>POVRCH MARSU</span></span></div></div>
+<div class="summary-band"><div class="band-fact"><i data-icon="users"></i>1–5 hráčů</div><div class="band-fact"><i data-icon="clock"></i>90–120 minut</div><div class="band-fact"><i data-icon="cards"></i>208 základních projektů</div><div class="band-fact"><i data-icon="globe"></i>Mapa Tharsis</div></div>
+<section class="featured"><div class="section-head"><div><p class="overline orange"><span class="line"></span>Karetní archiv</p><h2>Vybrané projekty</h2></div><button class="btn subtle" data-do="catalog"><i data-icon="grid"></i>Celý katalog</button></div><div class="featured-grid" id="featured"></div></section></section>
+<section id="catalog" hidden aria-labelledby="catalog-title"><div class="page-heading"><p class="overline orange"><span class="line"></span>Karetní archiv</p><h1 id="catalog-title">Katalog karet</h1></div><div class="filters"><label class="search"><i data-icon="search"></i><input id="card-search" type="search" placeholder="Název, efekt nebo číslo karty" aria-label="Hledat kartu"></label><label class="filter-label">Sada<select id="card-set"></select></label><label class="filter-label">Typ<select id="card-type"></select></label></div><p id="catalog-count" class="muted count" aria-live="polite"></p><div class="catalog-grid" id="catalog-results"></div><button id="more-cards" class="btn subtle load-more" data-do="more" hidden>Načíst další karty</button></section>
+<section id="room" hidden aria-label="Herní stůl"></section>
+</main><footer class="shell footer"><span class="footer-brand">MARS <b>/</b> TERAFORMACE</span><button class="textbtn" data-do="credits">Autoři a zdroje</button></footer>
+<dialog id="modal" aria-labelledby="modal-title"><div id="modal-content"></div></dialog><div id="notice" class="notice" role="status" aria-live="polite"></div><noscript>Pro hraní zapni v prohlížeči JavaScript.</noscript></body></html>

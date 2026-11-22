@@ -1,0 +1,882 @@
+{
+  "P01": {
+    "name": "Spojenecká banka",
+    "text": "Zvyš svou produkci M€ o 4 a získej 3 M€.",
+    "en": "Allied Bank"
+  },
+  "P02": {
+    "name": "Turbíny u podzemních vod",
+    "text": "Umísti oceán, zvyš produkci energie o 2 a zaplať 3 M€.",
+    "en": "Aquifer Turbines"
+  },
+  "P03": {
+    "name": "Biopaliva",
+    "text": "Zvyš produkci rostlin a energie o 1. Získej 2 rostliny.",
+    "en": "Biofuels"
+  },
+  "P04": {
+    "name": "Biologická laboratoř",
+    "text": "Zvyš produkci rostlin o 1 a dober si 3 karty.",
+    "en": "Biolab"
+  },
+  "P05": {
+    "name": "Podpora biosféry",
+    "text": "Sniž produkci M€ o 1 a zvyš produkci rostlin o 2.",
+    "en": "Biosphere Support"
+  },
+  "P06": {
+    "name": "Obchodní impérium",
+    "text": "Zvyš produkci M€ o 6 a zaplať 6 M€.",
+    "en": "Business Empire"
+  },
+  "P07": {
+    "name": "Pěstírny pod kupolí",
+    "text": "Zvyš produkci rostlin o 1 a produkci M€ o 2.",
+    "en": "Dome Farming"
+  },
+  "P08": {
+    "name": "Finanční dar",
+    "text": "Získej 21 M€.",
+    "en": "Donation"
+  },
+  "P09": {
+    "name": "První osada",
+    "text": "Umísti město a zvyš produkci rostlin o 1.",
+    "en": "Early Settlement"
+  },
+  "P10": {
+    "name": "Experti na ekologii",
+    "text": "Zvyš produkci rostlin o 1. Zahraj z ruky projekt. U jeho podmínek smíš ignorovat hodnoty hlavních faktorů.",
+    "en": "Ecology Experts"
+  },
+  "P11": {
+    "name": "Výstřední sponzor",
+    "text": "Zahraj projekt z ruky se slevou 25 M€.",
+    "en": "Eccentric Sponsor"
+  },
+  "P12": {
+    "name": "Pokusný les",
+    "text": "Umísti zeleň a zvyš kyslík o 1. Dober si 2 karty s kategorií rostliny.",
+    "en": "Experimental Forest"
+  },
+  "P13": {
+    "name": "Těžba na Galileových měsících",
+    "text": "Zvyš produkci titanu o 2 a zaplať 5 M€.",
+    "en": "Galilean Mining"
+  },
+  "P14": {
+    "name": "Obří podzemní zásobárna",
+    "text": "Umísti 2 oceány.",
+    "en": "Great Aquifer"
+  },
+  "P15": {
+    "name": "Obří asteroid",
+    "text": "Zvyš teplotu o 3 stupně a zaplať 5 M€.",
+    "en": "Huge Asteroid"
+  },
+  "P16": {
+    "name": "Výzkumná stanice na Io",
+    "text": "Zvyš produkci titanu o 1 a dober si kartu.",
+    "en": "Io Research Outpost"
+  },
+  "P17": {
+    "name": "Úvěr",
+    "text": "Sniž produkci M€ o 2 a získej 30 M€.",
+    "en": "Loan"
+  },
+  "P18": {
+    "name": "Marťanský průmysl",
+    "text": "Zvyš produkci energie i oceli o 1 a získej 6 M€.",
+    "en": "Martian Industries"
+  },
+  "P19": {
+    "name": "Asteroid bohatý na kovy",
+    "text": "Zvyš teplotu o 1 stupeň. Získej 4 jednotky titanu a 4 jednotky oceli.",
+    "en": "Metal-Rich Asteroid"
+  },
+  "P20": {
+    "name": "Hutní společnost",
+    "text": "Zvyš produkci M€, oceli i titanu o 1.",
+    "en": "Metals Company"
+  },
+  "P21": {
+    "name": "Důlní provoz",
+    "text": "Zvyš produkci oceli o 2 a získej 4 jednotky oceli.",
+    "en": "Mining Operations"
+  },
+  "P22": {
+    "name": "Hlubinný vrt",
+    "text": "Zvyš produkci tepla o 3 a získej 3 jednotky tepla.",
+    "en": "Mohole"
+  },
+  "P23": {
+    "name": "Hloubení hlubinného vrtu",
+    "text": "Zvyš produkci oceli o 1 a produkci tepla o 2. Získej 2 jednotky tepla.",
+    "en": "Mohole Excavation"
+  },
+  "P24": {
+    "name": "Zásilka dusíku",
+    "text": "Zvyš TR a produkci rostlin o 1. Získej 5 M€.",
+    "en": "Nitrogen Shipment"
+  },
+  "P25": {
+    "name": "Orbitální loděnice",
+    "text": "Zvyš produkci titanu o 1 a získej 4 jednotky titanu.",
+    "en": "Orbital Construction Yard"
+  },
+  "P26": {
+    "name": "Polární průmysl",
+    "text": "Umísti oceán a zvyš produkci tepla o 2.",
+    "en": "Polar Industries"
+  },
+  "P27": {
+    "name": "Výroba energie",
+    "text": "Zvyš produkci energie o 3.",
+    "en": "Power Generation"
+  },
+  "P28": {
+    "name": "Výzkumná síť",
+    "text": "Dober si 3 karty a zvyš produkci M€ o 1. Po vyložení této karty můžeš při své akci žolíkový symbol započítat jako kategorii podle potřeby.",
+    "en": "Research Network"
+  },
+  "P29": {
+    "name": "Soběstačná osada",
+    "text": "Umísti město a zvyš produkci M€ o 2.",
+    "en": "Self-Sufficient Settlement"
+  },
+  "P30": {
+    "name": "Huť",
+    "text": "Zvyš kyslík o 2 stupně a získej 5 jednotek oceli.",
+    "en": "Smelting Plant"
+  },
+  "P31": {
+    "name": "Podpora společnosti",
+    "text": "Sniž produkci M€ o 1. Zvyš produkci rostlin, energie i tepla o 1.",
+    "en": "Society Support"
+  },
+  "P32": {
+    "name": "Dodavatel",
+    "text": "Zvyš produkci energie o 2 a získej 4 jednotky oceli.",
+    "en": "Supplier"
+  },
+  "P33": {
+    "name": "Shazování zásob",
+    "text": "Získej 3 jednotky titanu, 8 jednotek oceli a 3 rostliny.",
+    "en": "Supply Drop"
+  },
+  "P34": {
+    "name": "Dodavatel pro UNMI",
+    "text": "Zvyš TR o 3 a dober si kartu.",
+    "en": "UNMI Contractor"
+  },
+  "P35": {
+    "name": "Koupě kosmické agentury",
+    "text": "Získej 6 jednotek titanu a dober si 2 karty s kategorií vesmír.",
+    "en": "Acquired Space Agency"
+  },
+  "P36": {
+    "name": "Tisk obytných budov",
+    "text": "Zvyš produkci oceli o 1. Získáš 1 VB.",
+    "en": "House Printing"
+  },
+  "P37": {
+    "name": "Osada v lávovém tunelu",
+    "text": "Sniž produkci energie o 1 a zvyš produkci M€ o 2. Umísti město na vulkanické pole. Smí sousedit s jiným městem.",
+    "en": "Lava Tube Settlement"
+  },
+  "P38": {
+    "name": "Průzkum Marsu",
+    "text": "Kyslík smí být nejvýše 4 %. Dober si 2 karty. Získáš 1 VB.",
+    "en": "Martian Survey"
+  },
+  "P39": {
+    "name": "Psychrofilní organismy",
+    "text": "Teplota smí být nejvýše −20 °C. Akcí přidej na tuto kartu 1 mikroba. Při placení projektu s kategorií rostliny má zdejší mikrob hodnotu 2 M€.",
+    "en": "Psychrophiles"
+  },
+  "P40": {
+    "name": "Koordinace výzkumu",
+    "text": "Po vyložení této karty můžeš při své akci žolíkový symbol započítat jako kategorii podle potřeby.",
+    "en": "Research Coordination"
+  },
+  "P41": {
+    "name": "Památník science fiction",
+    "text": "Dober si kartu. Získáš 1 VB.",
+    "en": "SF Memorial"
+  },
+  "P42": {
+    "name": "Vesmírné hotely",
+    "text": "Potřebuješ 2 symboly Země. Zvyš produkci M€ o 4.",
+    "en": "Space Hotels"
+  },
+  "R16": {
+    "name": "Cheung Shing Mars",
+    "text": "Začínáš se 44 M€ a produkcí 3 M€. Stavební projekty tě stojí o 2 M€ méně.",
+    "en": "Cheung Shing MARS"
+  },
+  "R10": {
+    "name": "Point Luna",
+    "text": "Začínáš s 38 M€ a produkcí 1 titanu. Za každý symbol Země, který vyložíš, si dober kartu. Platí i pro tuto korporaci.",
+    "en": "Point Luna"
+  },
+  "R27": {
+    "name": "Robinson Industries",
+    "text": "Začínáš se 47 M€. Akcí zaplať 4 M€ a zvyš o 1 jeden ze svých aktuálně nejnižších druhů produkce.",
+    "en": "Robinson Industries"
+  },
+  "R34": {
+    "name": "Valley Trust",
+    "text": "Začínáš s 37 M€. V první akci dober 3 předehry, jednu vylož a zbylé odhoď. Projekty s kategorií věda tě stojí o 2 M€ méně.",
+    "en": "Valley Trust"
+  },
+  "R35": {
+    "name": "Vitor",
+    "text": "Začínáš se 45 M€. V první akci sponzoruj zdarma jednu soutěž. Za vyložení karty se symbolem nezáporné bodové hodnoty získáš 3 M€. Platí i pro tuto korporaci.",
+    "en": "Vitor"
+  },
+  "213": {
+    "name": "Letečtí kartografové",
+    "text": "Akcí přidej 1 plošinu na vhodnou kartu, nebo odeber zdejší plošinu a dober si kartu. Získáš 1 VB.",
+    "en": "Aerial Mappers"
+  },
+  "214": {
+    "name": "Turnaj leteckých sportů",
+    "text": "Potřebuješ alespoň 3 plošiny. Získej 1 M€ za každé město ve hře. Získáš 1 VB.",
+    "en": "Aerosport Tournament"
+  },
+  "215": {
+    "name": "Expedice na čištění atmosféry",
+    "text": "Zlepši stav Venuše o 1 stupeň a přidej 3 plošiny na vhodnou kartu kategorie Venuše.",
+    "en": "Air-Scrapping Expedition"
+  },
+  "216": {
+    "name": "Laboratoř v Atalanta Planitia",
+    "text": "Potřebuješ 3 symboly vědy. Dober si 2 karty. Získáš 2 VB.",
+    "en": "Atalanta Planitia Lab"
+  },
+  "217": {
+    "name": "Atmosférický sběrač",
+    "text": "Potřebuješ 3 symboly vědy. Zvyš teplotu nebo stav Venuše o 2 stupně a přidej 2 plošiny na vhodnou kartu. Získáš 1 VB.",
+    "en": "Atmoscoop"
+  },
+  "218": {
+    "name": "Kometa pro Venuši",
+    "text": "Zlepši stav Venuše o 1 stupeň. Hráči se symbolem Venuše můžeš odebrat až 4 M€.",
+    "en": "Comet for Venus"
+  },
+  "219": {
+    "name": "Antikorozní skafandry",
+    "text": "Zvyš produkci M€ o 2. Na vhodnou kartu Venuše přidej 1 jednotku zdroje, který se na ní ukládá.",
+    "en": "Corroder Suits"
+  },
+  "220": {
+    "name": "Město úsvitu",
+    "text": "Potřebuješ 4 symboly vědy. Sniž produkci energie o 1 a zvyš produkci titanu o 1. Umísti město na pole Dawn City. Získáš 3 VB.",
+    "en": "Dawn City"
+  },
+  "221": {
+    "name": "Vývoz deuteria",
+    "text": "Akcí sem přidej 1 plošinu, nebo odeber 1 zdejší plošinu a zvyš svou produkci energie o 1.",
+    "en": "Deuterium Export"
+  },
+  "222": {
+    "name": "Vzducholodě",
+    "text": "Akcí přidej 1 plošinu na vhodnou kartu. Za projekt s kategorií Venuše můžeš platit plošinami z této karty. Každá nahradí 3 M€.",
+    "en": "Dirigibles"
+  },
+  "223": {
+    "name": "Těžební balony",
+    "text": "Při vyložení sem přidej 3 plošiny. Akcí sem přidej 1 plošinu, nebo odeber 2 zdejší plošiny a zlepši stav Venuše o stupeň.",
+    "en": "Extractor Balloons"
+  },
+  "224": {
+    "name": "Extrémofilní organismy",
+    "text": "Potřebuješ 2 symboly vědy. Akcí přidej 1 mikroba na vhodnou kartu. Za každé 3 zdejší mikroby získáš 1 VB.",
+    "en": "Extremophiles"
+  },
+  "225": {
+    "name": "Levitující obydlí",
+    "text": "Potřebuješ 2 symboly vědy. Akcí zaplať 2 M€ a přidej 1 plošinu na vhodnou kartu. Za každé 2 zdejší plošiny získáš 1 VB.",
+    "en": "Floating Habs"
+  },
+  "226": {
+    "name": "Umělé srážky",
+    "text": "Akcí sem za 2 M€ přidej 1 plošinu, nebo odeber 2 zdejší plošiny a zlepši stav Venuše o stupeň.",
+    "en": "Forced Precipitation"
+  },
+  "227": {
+    "name": "Biokupole Freyja",
+    "text": "Stav Venuše musí být alespoň 10 %. Na jinou vhodnou kartu Venuše přidej 2 mikroby nebo 2 zvířata. Sniž produkci energie o 1 a zvyš produkci M€ o 2. Získáš 2 VB.",
+    "en": "Freyja Biodomes"
+  },
+  "228": {
+    "name": "Dovoz skleníkových plynů z Venuše",
+    "text": "Zlepši stav Venuše o 1 stupeň a zvyš svou produkci tepla o 3.",
+    "en": "GHG Import From Venus"
+  },
+  "229": {
+    "name": "Obří sluneční clona",
+    "text": "Zlepši stav Venuše o 3 stupně.",
+    "en": "Giant Solar Shade"
+  },
+  "230": {
+    "name": "Gyropolis",
+    "text": "Sniž produkci energie o 2. Zvyš produkci M€ o 1 za každý svůj symbol Venuše či Země. Umísti město.",
+    "en": "Gyropolis"
+  },
+  "231": {
+    "name": "Vodík pro Venuši",
+    "text": "Zlepši stav Venuše o 1 stupeň. Za každý svůj symbol Jupiteru přidej 1 plošinu na vhodnou kartu Venuše.",
+    "en": "Hydrogen to Venus"
+  },
+  "232": {
+    "name": "Výzkum síry na Io",
+    "text": "Dober si kartu. Máš-li alespoň 3 symboly Venuše, dober si celkem 3 karty. Získáš 2 VB.",
+    "en": "Io Sulphur Research"
+  },
+  "233": {
+    "name": "Těžba v oblasti Ištar",
+    "text": "Stav Venuše musí být alespoň 8 %. Zvyš produkci titanu o 1.",
+    "en": "Ishtar Mining"
+  },
+  "234": {
+    "name": "Mikročističe v tryskovém proudění",
+    "text": "Akcí zaplať 1 titan a přidej sem 2 plošiny, nebo odeber 2 zdejší plošiny a zlepši stav Venuše o stupeň.",
+    "en": "Jet Stream Microscrappers"
+  },
+  "235": {
+    "name": "Místní stínění",
+    "text": "Akcí sem přidej 1 plošinu, nebo odeber 1 zdejší plošinu a zvyš produkci M€ o 1.",
+    "en": "Local Shading"
+  },
+  "236": {
+    "name": "Měsíční metropole",
+    "text": "Zvyš produkci M€ o 1 za každý svůj symbol Země včetně právě vyloženého. Umísti město na pole Luna Metropolis. Získáš 2 VB.",
+    "en": "Luna Metropolis"
+  },
+  "237": {
+    "name": "Luxusní potraviny",
+    "text": "Potřebuješ alespoň po jednom symbolu Venuše, Země a Jupiteru. Získáš 2 VB.",
+    "en": "Luxury Foods"
+  },
+  "238": {
+    "name": "Základna Maxwell",
+    "text": "Stav Venuše musí být alespoň 12 %. Sniž produkci energie o 1 a umísti město na pole Maxwell Base. Akcí přidej 1 zdroj na jinou vhodnou kartu Venuše. Získáš 3 VB.",
+    "en": "Maxwell Base"
+  },
+  "239": {
+    "name": "Těžební kvóta",
+    "text": "Potřebuješ alespoň po jednom symbolu Venuše, Země a Jupiteru. Zvyš produkci oceli o 2.",
+    "en": "Mining Quota"
+  },
+  "240": {
+    "name": "Továrna na neutralizační látky",
+    "text": "Stav Venuše musí být alespoň 10 %. Zlepši její stav o 1 stupeň.",
+    "en": "Neutralizer Factory"
+  },
+  "241": {
+    "name": "Meziplanetární soud",
+    "text": "Potřebuješ alespoň po jednom symbolu Venuše, Země a Jupiteru. Zvyš TR o 2.",
+    "en": "Omnicourt"
+  },
+  "242": {
+    "name": "Orbitální reflektory",
+    "text": "Zlepši stav Venuše o 2 stupně a zvyš svou produkci tepla o 2.",
+    "en": "Orbital Reflectors"
+  },
+  "243": {
+    "name": "Impulzní nárazy",
+    "text": "Stav Venuše smí být nejvýše 14 %. Akcí sem za 6 M€ přidej 1 meteorit (smíš platit titanem), nebo odeber 1 zdejší meteorit a zlepši stav Venuše o stupeň.",
+    "en": "Rotator Impacts"
+  },
+  "244": {
+    "name": "Podpora sesterských planet",
+    "text": "Potřebuješ symbol Venuše a symbol Země. Zvyš produkci M€ o 3.",
+    "en": "Sister Planet Support"
+  },
+  "245": {
+    "name": "Sluneční síť",
+    "text": "Potřebuješ alespoň po jednom symbolu Venuše, Země a Jupiteru. Dober si 2 karty. Získáš 1 VB.",
+    "en": "Solarnet"
+  },
+  "246": {
+    "name": "Asteroid urychlující rotaci",
+    "text": "Stav Venuše smí být nejvýše 10 %. Zlepši její stav o 2 stupně.",
+    "en": "Spin-Inducing Asteroid"
+  },
+  "247": {
+    "name": "Sponzorované akademie",
+    "text": "Odhoď z ruky 1 kartu a dober si 3 karty. Každý soupeř si dobere kartu. Získáš 1 VB.",
+    "en": "Sponsored Academies"
+  },
+  "248": {
+    "name": "Stratopolis",
+    "text": "Potřebuješ 2 symboly vědy. Zvyš produkci M€ o 2 a umísti město na pole Stratopolis. Akcí přidej 2 plošiny na vhodnou kartu Venuše. Každé 3 zdejší plošiny mají hodnotu 1 VB.",
+    "en": "Stratopolis"
+  },
+  "249": {
+    "name": "Stratosféričtí ptáci",
+    "text": "Stav Venuše musí být alespoň 12 %. Utrať 1 plošinu z kterékoli své karty. Akcí sem přidej 1 zvíře. Za každé zdejší zvíře získáš 1 VB.",
+    "en": "Stratospheric Birds"
+  },
+  "250": {
+    "name": "Vývoz síry",
+    "text": "Zlepši stav Venuše o 1 stupeň. Zvyš produkci M€ o 1 za každý svůj symbol Venuše včetně právě vyloženého.",
+    "en": "Sulphur Exports"
+  },
+  "251": {
+    "name": "Sírožravé bakterie",
+    "text": "Stav Venuše musí být alespoň 6 %. Akcí sem přidej 1 mikroba, nebo odeber libovolný počet zdejších mikrobů a za každého získej 3 M€.",
+    "en": "Sulphur-Eating Bacteria"
+  },
+  "252": {
+    "name": "Smlouva o teraformaci",
+    "text": "Potřebuješ TR alespoň 25. Zvyš produkci M€ o 4.",
+    "en": "Terraforming Contract"
+  },
+  "253": {
+    "name": "Teplomilné organismy",
+    "text": "Stav Venuše musí být alespoň 6 %. Akcí přidej 1 mikroba na vhodnou kartu Venuše, nebo odeber 2 zdejší mikroby a zlepši stav Venuše o stupeň.",
+    "en": "Thermophiles"
+  },
+  "254": {
+    "name": "Voda pro Venuši",
+    "text": "Zlepši stav Venuše o 1 stupeň.",
+    "en": "Water to Venus"
+  },
+  "255": {
+    "name": "Guvernér Venuše",
+    "text": "Potřebuješ 2 symboly Venuše. Zvyš produkci M€ o 2.",
+    "en": "Venus Governor"
+  },
+  "256": {
+    "name": "Magnetizace Venuše",
+    "text": "Stav Venuše musí být alespoň 10 %. Akcí sniž produkci energie o 1 a zlepši stav Venuše o stupeň.",
+    "en": "Venus Magnetizer"
+  },
+  "257": {
+    "name": "Půda z Venuše",
+    "text": "Zlepši stav Venuše o 1 stupeň a zvyš produkci rostlin o 1. Přidej 2 mikroby na jinou vhodnou kartu.",
+    "en": "Venus Soils"
+  },
+  "258": {
+    "name": "Přestupní stanice u Venuše",
+    "text": "Za projekty s kategorií Venuše platíš o 2 M€ méně. Získáš 1 VB.",
+    "en": "Venus Waystation"
+  },
+  "259": {
+    "name": "Venušská zvířata",
+    "text": "Stav Venuše musí být alespoň 18 %. Za každý symbol vědy, který vyložíš, sem přidej 1 zvíře. Platí i pro tuto kartu. Za každé zdejší zvíře získáš 1 VB.",
+    "en": "Venusian Animals"
+  },
+  "260": {
+    "name": "Venušský hmyz",
+    "text": "Stav Venuše musí být alespoň 12 %. Akcí sem přidej 1 mikroba. Za každé 2 zdejší mikroby získáš 1 VB.",
+    "en": "Venusian Insects"
+  },
+  "261": {
+    "name": "Venušské rostliny",
+    "text": "Stav Venuše musí být alespoň 16 %. Zlepši její stav o 1 stupeň a na jinou vhodnou kartu Venuše přidej mikroba nebo zvíře. Získáš 1 VB.",
+    "en": "Venusian Plants"
+  },
+  "R01": {
+    "name": "Aphrodite",
+    "text": "Začínáš se 47 M€ a produkcí 1 rostliny. Kdykoli se stav Venuše zlepší o stupeň, získáš 2 M€.",
+    "en": "Aphrodite"
+  },
+  "R05": {
+    "name": "Celestic",
+    "text": "Začínáš se 42 M€. V první akci si dober 2 karty se symbolem plošiny. Akcí můžeš přidat 1 plošinu na vhodnou kartu. Za každé 3 plošiny na této korporaci získáš 1 VB.",
+    "en": "Celestic"
+  },
+  "R23": {
+    "name": "Manutech",
+    "text": "Začínáš s 35 M€ a produkcí 1 oceli. Kdykoli zvýšíš svou produkci zdroje, získej ihned odpovídající počet jednotek tohoto zdroje.",
+    "en": "Manutech"
+  },
+  "R06": {
+    "name": "Morning Star Inc.",
+    "text": "Začínáš s 50 M€. V první akci si dober 3 karty s kategorií Venuše. Požadovaný stav Venuše se pro tvé projekty může lišit až o 2 stupně v obou směrech.",
+    "en": "Morning Star Inc."
+  },
+  "R12": {
+    "name": "Viron",
+    "text": "Začínáš se 48 M€. Akcí zopakuj akci své modré karty, kterou jsi již v této generaci provedl.",
+    "en": "Viron"
+  },
+  "C01": {
+    "name": "Letecké linky",
+    "text": "Potřebuješ 3 plošiny. Zvyš produkci M€ o 2 a přidej 2 plošiny na jinou vhodnou kartu. Získáš 1 VB.",
+    "en": "Airliners"
+  },
+  "C02": {
+    "name": "Letecký nálet",
+    "text": "Odeber 1 plošinu z některé své karty a vezmi libovolnému hráči až 5 M€.",
+    "en": "Air Raid"
+  },
+  "C03": {
+    "name": "Atmosférické sběrače",
+    "text": "Při vyložení přidej 2 plošiny na vhodnou kartu. Akcí sem přidej 1 plošinu, nebo odeber 1 zdejší plošinu a získej 2 titany, 3 energie nebo 4 tepla.",
+    "en": "Atmo Collectors"
+  },
+  "C04": {
+    "name": "Komunitní služby",
+    "text": "Zvyš produkci M€ o 1 za každou svou vyloženou kartu bez kategorie, včetně této. Získáš 1 VB.",
+    "en": "Community Services"
+  },
+  "C05": {
+    "name": "Odvody",
+    "text": "Potřebuješ 2 symboly Země. Příští kartu, kterou v této generaci zahraješ, zlevni o 16 M€. Odečti 1 VB.",
+    "en": "Conscription"
+  },
+  "C06": {
+    "name": "Sběrač koronální energie",
+    "text": "Potřebuješ 4 symboly vědy. Zvyš produkci energie o 4.",
+    "en": "Corona Extractor"
+  },
+  "C07": {
+    "name": "Kryospánek",
+    "text": "Při obchodování platíš o 1 jednotku zvoleného zdroje méně. Získáš 1 VB.",
+    "en": "Cryo-Sleep"
+  },
+  "C08": {
+    "name": "Pozemský kosmický výtah",
+    "text": "Zvyš produkci titanu o 3. Získáš 4 VB.",
+    "en": "Earth Elevator"
+  },
+  "C09": {
+    "name": "Ekologický výzkum",
+    "text": "Zvyš produkci rostlin o 1 za každou svou stanici v kolonii. Na vhodné karty přidej 1 zvíře a 2 mikroby. Získáš 1 VB.",
+    "en": "Ecology Research"
+  },
+  "C10": {
+    "name": "Pronájem plošin",
+    "text": "Zvyš produkci M€ o 1 za každé 3 plošiny na svých kartách.",
+    "en": "Floater Leasing"
+  },
+  "C11": {
+    "name": "Prototypy plošin",
+    "text": "Přidej 2 plošiny na jinou vhodnou kartu.",
+    "en": "Floater Prototypes"
+  },
+  "C12": {
+    "name": "Technologie plošin",
+    "text": "Akcí přidej 1 plošinu na jinou vhodnou kartu.",
+    "en": "Floater Technology"
+  },
+  "C13": {
+    "name": "Stanice u Galileových měsíců",
+    "text": "Zvyš produkci M€ o 1 za každý symbol Jupiteru ve hře. Získáš 1 VB.",
+    "en": "Galilean Waystation"
+  },
+  "C14": {
+    "name": "Vysoké zdanění",
+    "text": "Potřebuješ 2 symboly Země. Zvyš produkci M€ o 2 a získej 4 M€. Odečti 1 VB.",
+    "en": "Heavy Taxation"
+  },
+  "C15": {
+    "name": "Kolonie na ledovém měsíci",
+    "text": "Založ stanici na destičce kolonie a umísti oceán.",
+    "en": "Ice Moon Colony"
+  },
+  "C16": {
+    "name": "Roj impaktorů",
+    "text": "Potřebuješ 2 symboly Jupiteru. Získej 12 tepla a odeber libovolnému hráči až 2 rostliny.",
+    "en": "Impactor Swarm"
+  },
+  "C17": {
+    "name": "Meziplanetární kolonizační loď",
+    "text": "Založ jednu stanici v kolonii.",
+    "en": "Interplanetary Colony Ship"
+  },
+  "C18": {
+    "name": "Jupiterské lucerny",
+    "text": "Potřebuješ symbol Jupiteru. Zvyš TR o 1 a přidej 2 plošiny na vhodnou kartu. Akcí zaplať 1 titan a přidej sem 2 plošiny. Každé 2 zdejší plošiny mají hodnotu 1 VB.",
+    "en": "Jovian Lanterns"
+  },
+  "C19": {
+    "name": "Levitující stanice u Jupiteru",
+    "text": "Potřebuješ 3 symboly vědy. Akcí přidej 1 plošinu na vhodnou kartu Jupiteru, nebo získej 1 M€ za každou zdejší plošinu, nejvýše 4 M€. Získáš 1 VB.",
+    "en": "Jupiter Floating Station"
+  },
+  "C20": {
+    "name": "Guvernér Měsíce",
+    "text": "Potřebuješ 3 symboly Země. Zvyš produkci M€ o 2.",
+    "en": "Luna Governor"
+  },
+  "C21": {
+    "name": "Vývoz z Měsíce",
+    "text": "Zvol si zvýšení produkce rostlin o 2 nebo produkce M€ o 5.",
+    "en": "Lunar Exports"
+  },
+  "C22": {
+    "name": "Těžba na Měsíci",
+    "text": "Zvyš produkci titanu o 1 za každé 2 své symboly Země. Počítá se i symbol právě vyložené karty.",
+    "en": "Lunar Mining"
+  },
+  "C23": {
+    "name": "Manipulace s trhem",
+    "text": "Posuň obchodní ukazatel jedné kolonie o stupeň výš a ukazatel jiné kolonie o stupeň níž.",
+    "en": "Market Manipulation"
+  },
+  "C24": {
+    "name": "Marťanská zoo",
+    "text": "Ve hře musejí být alespoň 2 města. Za každý nově vyložený vlastní symbol Země sem přidej 1 zvíře. Akcí získej 1 M€ za každé zdejší zvíře. Získáš 1 VB.",
+    "en": "Martian Zoo"
+  },
+  "C25": {
+    "name": "Těžební kolonie",
+    "text": "Zvyš produkci titanu o 1 a založ stanici v kolonii.",
+    "en": "Mining Colony"
+  },
+  "C26": {
+    "name": "Útočiště pro menšiny",
+    "text": "Sniž produkci M€ o 2 a založ stanici v kolonii.",
+    "en": "Minority Refuge"
+  },
+  "C27": {
+    "name": "Molekulární tisk",
+    "text": "Získej po 1 M€ za každé město a každou stanici v kolonii ve hře. Získáš 1 VB.",
+    "en": "Molecular Printing"
+  },
+  "C28": {
+    "name": "Dusík z Titanu",
+    "text": "Zvyš TR o 2 a přidej 2 plošiny na vhodnou kartu Jupiteru. Získáš 1 VB.",
+    "en": "Nitrogen from Titan"
+  },
+  "C29": {
+    "name": "Osada průkopníků",
+    "text": "Smíš mít nejvýše 1 stanici v koloniích. Sniž produkci M€ o 2 a založ stanici. Získáš 2 VB.",
+    "en": "Pioneer Settlement"
+  },
+  "C30": {
+    "name": "Produktivní základna",
+    "text": "Vyber si obchodní bonus za každou svou stanici v koloniích.",
+    "en": "Productive Outpost"
+  },
+  "C31": {
+    "name": "Kvantová komunikace",
+    "text": "Potřebuješ 4 symboly vědy. Zvyš produkci M€ o 1 za každou stanici v kolonii ve hře. Získáš 1 VB.",
+    "en": "Quantum Communications"
+  },
+  "C32": {
+    "name": "Observatoř Velké rudé skvrny",
+    "text": "Potřebuješ 3 symboly vědy. Dober si 2 karty. Akcí sem přidej 1 plošinu, nebo odeber 1 zdejší plošinu a dober si kartu. Získáš 2 VB.",
+    "en": "Red Spot Observatory"
+  },
+  "C33": {
+    "name": "Uprchlické tábory",
+    "text": "Akcí sniž svou produkci M€ o 1 a přidej sem 1 tábor. Za každý zdejší tábor získáš 1 VB.",
+    "en": "Refugee Camps"
+  },
+  "C34": {
+    "name": "Výzkumná kolonie",
+    "text": "Založ stanici v kolonii a dober si 2 karty. Stanici smíš umístit i tam, kde již jednu vlastníš.",
+    "en": "Research Colony"
+  },
+  "C35": {
+    "name": "Nákladní lodě na okraji soustavy",
+    "text": "Při obchodování platíš o 1 jednotku zvoleného zdroje méně.",
+    "en": "Rim Freighters"
+  },
+  "C36": {
+    "name": "Nebeské doky",
+    "text": "Potřebuješ 2 symboly Země. Získej další obchodní loď. Každý projekt tě stojí o 1 M€ méně. Získáš 2 VB.",
+    "en": "Sky Docks"
+  },
+  "C37": {
+    "name": "Sluneční sonda",
+    "text": "Dober si kartu za každé 3 své symboly vědy. Počítá se i symbol právě vyložené karty. Získáš 1 VB.",
+    "en": "Solar Probe"
+  },
+  "C38": {
+    "name": "Sluneční reflektory",
+    "text": "Zvyš produkci tepla o 5.",
+    "en": "Solar Reflectors"
+  },
+  "C39": {
+    "name": "Kosmodrom",
+    "text": "Potřebuješ alespoň 1 vlastní stanici v kolonii. Získej obchodní loď a umísti město. Sniž produkci energie o 1 a zvyš produkci M€ o 4.",
+    "en": "Space Port"
+  },
+  "C40": {
+    "name": "Orbitální přístav v kolonii",
+    "text": "Potřebuješ alespoň 1 vlastní stanici v kolonii. Založ stanici, klidně i tam, kde již vlastní stanici máš. Získej obchodní loď. Za každé 2 stanice všech hráčů získáš 1 VB.",
+    "en": "Space Port Colony"
+  },
+  "C41": {
+    "name": "Oddělení pro vedlejší projekty",
+    "text": "Zvyš produkci M€ o 2. Kdykoli vyložíš kartu se základní cenou alespoň 20 M€, dober si kartu.",
+    "en": "Spin-off Department"
+  },
+  "C42": {
+    "name": "Chladnomilné slanomilné ryby",
+    "text": "Teplota musí být alespoň −6 °C. Sniž produkci rostlin libovolného hráče o 1. Akcí sem přidej 1 zvíře. Za každá 2 zdejší zvířata získáš 1 VB.",
+    "en": "Sub-zero Salt Fish"
+  },
+  "C43": {
+    "name": "Čištění atmosféry Titanu",
+    "text": "Akcí zaplať 1 titan a přidej sem 2 plošiny, nebo odeber 2 zdejší plošiny a zvyš TR o 1. Získáš 2 VB.",
+    "en": "Titan Air-scrapping"
+  },
+  "C44": {
+    "name": "Levitující odpaliště na Titanu",
+    "text": "Při vyložení přidej 2 plošiny na vhodnou kartu Jupiteru. Akcí přidej 1 plošinu na takovou kartu, nebo odeber 1 zdejší plošinu a proveď obchod zdarma. Získáš 1 VB.",
+    "en": "Titan Floating Launch-pad"
+  },
+  "C45": {
+    "name": "Raketoplány z Titanu",
+    "text": "Akcí přidej 2 plošiny na vhodnou kartu Jupiteru, nebo odeber libovolný počet zdejších plošin a za každou získej 1 titan. Získáš 1 VB.",
+    "en": "Titan Shuttles"
+  },
+  "C46": {
+    "name": "Obchodní vyslanci",
+    "text": "Před obchodem smíš zvýšit obchodní ukazatel cílové kolonie o 1 stupeň.",
+    "en": "Trade Envoys"
+  },
+  "C47": {
+    "name": "Obchodní kolonie",
+    "text": "Založ stanici v kolonii. Před každým svým obchodem smíš zvýšit obchodní ukazatel cílové kolonie o 1 stupeň.",
+    "en": "Trading Colony"
+  },
+  "C48": {
+    "name": "Městští rozkladači",
+    "text": "Ve hře musí být alespoň 1 město a 1 stanice v kolonii. Zvyš produkci rostlin o 1 a přidej 2 mikroby na jinou vhodnou kartu.",
+    "en": "Urban Decomposers"
+  },
+  "C49": {
+    "name": "Warpový pohon",
+    "text": "Potřebuješ 5 symbolů vědy. Každý vesmírný projekt tě stojí o 4 M€ méně. Získáš 2 VB.",
+    "en": "Warp Drive"
+  },
+  "R20": {
+    "name": "Aridor",
+    "text": "Začínáš se 40 M€. V první akci přidej do hry další destičku kolonie. Za každou novou kategorii, kterou poprvé vyložíš do hry, zvyš produkci M€ o 1. Kategorie událostí se nepočítají.",
+    "en": "Aridor"
+  },
+  "R04": {
+    "name": "Arklight",
+    "text": "Začínáš se 45 M€ a produkcí 2 M€. Za každý symbol zvířat nebo rostlin, který vyložíš, sem přidej 1 zvíře. Platí i pro korporaci samotnou. Za každá 2 zdejší zvířata získáš 1 VB.",
+    "en": "Arklight"
+  },
+  "R11": {
+    "name": "Polyphemos",
+    "text": "Začínáš s 50 M€, produkcí 5 M€ a 5 titany. Za každou kupovanou kartu včetně počátečních platíš 5 M€.",
+    "en": "Polyphemos"
+  },
+  "R02": {
+    "name": "Poseidon",
+    "text": "Začínáš se 45 M€. V první akci založ stanici v kolonii. Kdykoli někdo založí stanici, včetně této první, zvyš svou produkci M€ o 1.",
+    "en": "Poseidon"
+  },
+  "R29": {
+    "name": "Stormcraft Incorporated",
+    "text": "Začínáš se 48 M€. Akcí přidej 1 plošinu na vhodnou kartu. Plošiny na této korporaci můžeš utrácet jako 2 jednotky tepla za kus.",
+    "en": "Stormcraft Incorporated"
+  },
+  "T01": {
+    "name": "Vzdušné čočky",
+    "text": "Musí vládnout Kelvinovo hnutí, nebo v něm musíš mít alespoň 2 delegáty. Odeber libovolnému hráči až 2 rostliny a zvyš produkci tepla o 2. Odečti 1 VB.",
+    "en": "Aerial Lenses"
+  },
+  "T02": {
+    "name": "Vyloučený delegát",
+    "text": "Musíš zastávat úřad prezidenta. Odeber libovolného delegáta, který není předsedou strany.",
+    "en": "Banned Delegate"
+  },
+  "T03": {
+    "name": "Kulturní metropole",
+    "text": "Musí vládnout Unie, nebo v ní musíš mít alespoň 2 delegáty. Sniž produkci energie o 1 a zvyš produkci M€ o 3. Umísti město a pošli 2 delegáty do stejné strany.",
+    "en": "Cultural Metropolis"
+  },
+  "T04": {
+    "name": "Hnutí za vystěhování",
+    "text": "Musejí vládnout Rudí, nebo u nich musíš mít alespoň 2 delegáty. Získej 1 M€ za každý symbol Jupiteru ve hře.",
+    "en": "Diaspora Movement"
+  },
+  "T05": {
+    "name": "Analytici událostí",
+    "text": "Musí vládnout Syndikát akademiků, nebo v něm musíš mít alespoň 2 delegáty. Tvůj vliv se trvale zvyšuje o 1. Získáš 1 VB.",
+    "en": "Event Analysts"
+  },
+  "T06": {
+    "name": "Smlouva o GMO",
+    "text": "Musejí vládnout Zelení, nebo u nich musíš mít alespoň 2 delegáty. Za každý symbol rostlin, zvířat či mikrobů, který vyložíš, získej 2 M€. Platí i pro tuto kartu.",
+    "en": "GMO Contract"
+  },
+  "T07": {
+    "name": "Marťanské mediální centrum",
+    "text": "Musí vládnout strana Mars sobě!, nebo v ní musíš mít alespoň 2 delegáty. Zvyš produkci M€ o 2. Akcí zaplať 3 M€ a pošli 1 delegáta do libovolné strany.",
+    "en": "Martian Media Center"
+  },
+  "T08": {
+    "name": "Parlamentní síň",
+    "text": "Musí vládnout strana Mars sobě!, nebo v ní musíš mít alespoň 2 delegáty. Zvyš produkci M€ o 1 za každé 3 své symboly staveb včetně právě vyloženého. Získáš 1 VB.",
+    "en": "Parliament Hall"
+  },
+  "T09": {
+    "name": "Oddělení pro styk s veřejností",
+    "text": "Musí vládnout Unie, nebo v ní musíš mít alespoň 2 delegáty. Zvyš TR o 1 a získej 1 M€ za každý svůj symbol Země včetně právě vyloženého.",
+    "en": "PR Office"
+  },
+  "T10": {
+    "name": "Veřejné oslavy",
+    "text": "Musíš zastávat úřad prezidenta. Získáš 2 VB.",
+    "en": "Public Celebrations"
+  },
+  "T11": {
+    "name": "Nábor",
+    "text": "Nahraď neutrálního delegáta, který není předsedou strany, jedním svým delegátem z rezervy.",
+    "en": "Recruitment"
+  },
+  "T12": {
+    "name": "Vlna rudé turistiky",
+    "text": "Musejí vládnout Rudí, nebo u nich musíš mít alespoň 2 delegáty. Získej 1 M€ za každé neobsazené pole sousedící s některou tvou destičkou.",
+    "en": "Red Tourism Wave"
+  },
+  "T13": {
+    "name": "Sponzorovaný hlubinný vrt",
+    "text": "Musí vládnout Kelvinovo hnutí, nebo v něm musíš mít alespoň 2 delegáty. Zvyš produkci tepla o 2.",
+    "en": "Sponsored Mohole"
+  },
+  "T14": {
+    "name": "Podporovaný výzkum",
+    "text": "Musí vládnout Syndikát akademiků, nebo v něm musíš mít alespoň 2 delegáty. Dober si 2 karty.",
+    "en": "Supported Research"
+  },
+  "T15": {
+    "name": "Kupole pro divokou přírodu",
+    "text": "Musejí vládnout Zelení, nebo u nich musíš mít alespoň 2 delegáty. Umísti destičku zeleně a zvyš kyslík o stupeň.",
+    "en": "Wildlife Dome"
+  },
+  "T16": {
+    "name": "Hlasování o nedůvěře",
+    "text": "Musíš zastávat předsednictví některé strany a prezident musí být neutrální. Nahraď ho svým delegátem z rezervy a zvyš si TR o 1.",
+    "en": "Vote Of No Confidence"
+  },
+  "R38": {
+    "name": "Rekreační střediska u jezer",
+    "text": "Začínáš s 54 M€. Kdykoli někdo umístí oceán, zvyš produkci M€ o 1. Za každý oceán sousedící s právě umístěnou vlastní destičkou dostáváš 3 M€.",
+    "en": "Lakefront Resorts"
+  },
+  "R07": {
+    "name": "Pristar",
+    "text": "Začínáš s 53 M€ a sniž si počáteční TR o 2. Při produkci získáš 6 M€ a sem přidáš 1 jednotku ochrany přírody, pokud jsi v této generaci dosud nezískal žádný TR. Za každou zdejší jednotku získáš 1 VB.",
+    "en": "Pristar"
+  },
+  "R15": {
+    "name": "Septem Tribus",
+    "text": "Začínáš s 36 M€. Při svých akcích smíš žolíkový symbol počítat jako libovolnou kategorii. Akcí získej 2 M€ za každou stranu, v níž máš alespoň jednoho delegáta.",
+    "en": "Septem Tribus"
+  },
+  "R14": {
+    "name": "TerraLabs Research",
+    "text": "Začínáš se 14 M€ a sniž si počáteční TR o 1. Za každou kupovanou kartu včetně počátečních platíš 1 M€.",
+    "en": "TerraLabs Research"
+  },
+  "R33": {
+    "name": "Utopia Invest",
+    "text": "Začínáš se 40 M€ a produkcí 1 oceli a 1 titanu. Akcí sniž jednu svou produkci o 1 a získej 4 jednotky daného zdroje.",
+    "en": "Utopia Invest"
+  }
+}
