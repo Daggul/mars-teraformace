@@ -1,5 +1,7 @@
 # Mars · Teraformace
 
+**[Hrát Mars: Teraformace v prohlížeči](https://mars-teraformace.netlify.app/)**
+
 Česká neoficiální fanouškovská adaptace hry Jacoba Fryxelia pro 1–5 hráčů. Obsahuje mapu Tharsis, 208 projektů základní krabice a Éry korporací, korporace a volitelné moduly Předehra, Venuše, Kolonie a Neklid. UI a obrázky vznikly pro tuto verzi. České názvy karet jsou vlastní překlady.
 
 ## Hraní
