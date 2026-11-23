@@ -26,21 +26,22 @@ jobs:
           name: Mars-tablet
           path: ${{ runner.temp }}/mars-tablet-screenshots
           retention-days: 7
-      - name: Prepare small inline previews of the two public test screens
+      - name: Prepare small previews of both test screens
         run: |
-          node <<'JS'
-          const fs = require('node:fs');
-          const {execFileSync} = require('node:child_process');
-          const path = require('node:path');
-          const dir = path.join(process.env.RUNNER_TEMP, 'mars-tablet-screenshots');
-          for (const [key, file] of [['wide','Mars-tablet-na-sirku'],['tall','Mars-tablet-na-vysku']]) {
-            const input = path.join(dir, file + '.jpg');
-            const output = path.join(dir, key + '.webp');
-            execFileSync('convert', [input, '-resize', '840x840>', '-define', 'webp:target-size=25000', '-quality', '65', output]);
-            const b64 = fs.readFileSync(output).toString('base64');
-            console.log('MARS_PREVIEW_SIZE_' + key + '=' + b64.length);
-            for (let offset = 0; offset < b64.length; offset += 1200) {
-              console.log('MARS_PREVIEW_PART_' + key + '_' + offset + '=' + b64.slice(offset, offset + 1200));
-            }
-          }
-          JS
+          python3 -m venv "$RUNNER_TEMP/mars-thumbnails"
+          "$RUNNER_TEMP/mars-thumbnails/bin/pip" install -q Pillow==11.3.0
+          "$RUNNER_TEMP/mars-thumbnails/bin/python" - <<'PY'
+          import base64, io, os
+          from pathlib import Path
+          from PIL import Image
+          directory = Path(os.environ['RUNNER_TEMP']) / 'mars-tablet-screenshots'
+          for key, filename in [('wide', 'Mars-tablet-na-sirku.jpg'), ('tall', 'Mars-tablet-na-vysku.jpg')]:
+              image = Image.open(directory / filename)
+              image.thumbnail((850,850),Image.Resampling.LANCZOS)
+              buf = io.BytesIO()
+              image.save(buf,format='WEBP',quality=59,method=5)
+              data = base64.b64encode(buf.getvalue()).decode('ascii')
+              print(f'MARS_PREVIEW_SIZE_{key}={len(data)}')
+              for offset in range(0,len(data),1000):
+                  print(f'MARS_PREVIEW_PART_{key}_{offset}={data[offset:offset+1000]}')
+          PY
