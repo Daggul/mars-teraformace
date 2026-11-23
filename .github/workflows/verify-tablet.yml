@@ -1,0 +1,28 @@
+name: Verify the tablet game on Netlify
+on:
+  push:
+    branches: [verify/tablet-game]
+permissions:
+  contents: read
+jobs:
+  tablet:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Exercise touch controls on the published game
+        run: |
+          npm install --prefix "$RUNNER_TEMP/mars-ui-test" --ignore-scripts --no-audit --no-fund playwright-core@1.56.1
+          export NODE_PATH="$RUNNER_TEMP/mars-ui-test/node_modules"
+          export CHROME_BIN="$(command -v google-chrome)"
+          export SCREENSHOTS="$RUNNER_TEMP/mars-tablet-screenshots"
+          node tests/browser/tablet.cjs
+      - name: Save both tablet orientations
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mars-tablet
+          path: ${{ runner.temp }}/mars-tablet-screenshots
+          retention-days: 7
