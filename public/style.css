@@ -13,3 +13,286 @@
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 .dialog-message{padding:.6rem .8rem;border-left:2px solid var(--orange);background:#382c24;color:#f7dbbd}.kind-automated{--kind:#92b38a}
+
+/* The board and decisions scroll independently above the player's hand. */
+body.is-playing {
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.is-playing .top { flex: none; }
+.is-playing .topbar { height: 50px; }
+.is-playing .top .brand img { width: 32px; height: 32px; }
+.is-playing .footer { display: none; }
+.is-playing main.shell {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  width: min(1510px, calc(100% - 2rem));
+  padding: .4rem 0 max(.5rem, env(safe-area-inset-bottom));
+}
+.is-playing #room {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  gap: .5rem;
+}
+.session-bar { display: flex; flex: none; align-items: center; gap: clamp(.65rem, 2vw, 2rem); }
+.session-title { flex: none; }
+.session-title p { margin: 0 0 .15rem; color: var(--muted); font: 600 .7rem/1.25 var(--mono); }
+.session-title h1 { margin: 0; font: 700 clamp(1.45rem, 2.1vw, 2.15rem)/1 var(--display); }
+.session-title h1 small, .aux-heading h2 small { color: var(--muted); font-size: .64em; }
+.session-bar .gauges { flex: 1; min-width: 0; flex-wrap: nowrap; gap: .45rem; }
+.session-bar .gauge { flex: 1 1 0; gap: .6rem; padding: .28rem .65rem; }
+.session-bar .gauge > i { font-size: 1.2rem; }
+.session-bar .gauge > div { min-width: 0; }
+.session-bar .gauge div > span { display: block; font-size: .75rem; line-height: 1.2; }
+.session-bar .gauge p { line-height: 1.05; white-space: nowrap; }
+.session-bar .gauge p b { font-size: 1rem; }
+.session-bar .gauge p small { font-size: .72rem; }
+.session-bar .track { height: 3px; margin-top: .24rem; }
+.session-overview, .table-switch button, .hand-tools button, .hand-wallet {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .38rem;
+  min-height: 44px;
+  padding: .3rem .75rem;
+  color: var(--ink);
+  border: 1px solid var(--edge);
+  border-radius: 5px;
+  background: #212629;
+  font-size: .88rem;
+  font-weight: 600;
+}
+.session-overview[aria-pressed="true"], .table-switch button[aria-pressed="true"], .hand-tools button[aria-expanded="true"] {
+  background: #392b24;
+  border-color: #ad704e;
+  color: #ffbe99;
+}
+.table-switch { display: none; }
+#game-stage { flex: 1 1 0; min-width: 0; min-height: 0; }
+.is-playing .table-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(310px, .85fr);
+  align-items: stretch;
+  height: 100%;
+  min-height: 0;
+  gap: .65rem;
+}
+.is-playing #map-pane, .is-playing #turn {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+.is-playing .map-heading { padding: .4rem .9rem; }
+.is-playing .map-heading h2 { margin: 0; font: 700 1.45rem/1.1 var(--display); }
+.map-symbol { display: inline-flex; align-items: center; color: #c68b68; }
+.map-scroll {
+  display: grid;
+  grid-template-rows: minmax(min(350px, 72vw), 1fr) auto auto;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.is-playing .cartography { display: grid; place-items: center; padding: .35rem; container-type: size; }
+.is-playing .mapgrid { width: min(100%, 53vh, 750px); max-width: none; }
+@supports (width: 1cqh) {
+  .is-playing .mapgrid { width: min(100cqw, calc(100cqh * 1.113)); }
+}
+.is-playing .legend, .is-playing .orbits { gap: .25rem .8rem; padding: .22rem .75rem; }
+.is-playing .orbits:empty { display: none; }
+.is-playing .orbit { min-height: 44px; padding: .25rem .6rem; }
+.map-placement {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: .6rem;
+  padding: .45rem .72rem;
+  border-top: 1px solid #906042;
+  background: #30261f;
+}
+.map-placement > span { min-width: 0; line-height: 1.2; }
+.map-placement b, .map-placement small { display: block; }
+.map-placement small { color: #d7c4b5; font-size: .78rem; margin-top: .12rem; }
+.map-placement .btn { flex: none; min-height: 44px; }
+.turn-scroll, .extra-panel {
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #69706e transparent;
+}
+.turn-scroll { flex: 1; padding: clamp(.65rem, 1.55vw, 1.4rem); }
+.is-playing .turn h2 { font-size: clamp(1.5rem, 2.25vw, 2.2rem); }
+.is-playing .turn .picks { max-height: none; overflow: visible; }
+.is-playing .turn-foot {
+  flex: none;
+  align-items: center;
+  justify-content: flex-end;
+  gap: .5rem;
+  margin: 0;
+  padding: .45rem .75rem;
+  background: #1d2326;
+  border-top: 1px solid var(--edge);
+}
+.is-playing .turn-foot:empty { display: none; }
+.is-playing :is(.turn-foot .btn, .action-list > button, .step-tabs button, .pick, .peek, .game-tabs button, .aux-heading .btn) { min-height: 44px; }
+.is-playing .turn .peek, .is-playing .step-tabs button { min-width: 44px; }
+.is-playing .turn input, .is-playing .turn select { font-size: max(1rem, 16px); }
+.pay-stepper { display: inline-grid; grid-template-columns: 44px minmax(2.25rem, 3rem) 44px; flex: none; margin-left: auto; }
+.pay-stepper button, .payline .pay-stepper input {
+  min-width: 0;
+  width: 100%;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #535a5c;
+  border-radius: 0;
+  color: var(--ink);
+  background: #252c2e;
+  text-align: center;
+}
+.pay-stepper button { font-size: 1.25rem; }
+.pay-stepper button:first-child { border-radius: 5px 0 0 5px; }
+.pay-stepper button:last-child { border-radius: 0 5px 5px 0; }
+.payline .pay-stepper input { border-inline: 0; background: #15191b; appearance: textfield; }
+.pay-stepper input::-webkit-inner-spin-button { -webkit-appearance: none; }
+.pay-stepper button:disabled, .hand-tools button:disabled { opacity: .43; }
+.extra-panel { height: 100%; padding: .75rem clamp(.75rem, 2vw, 1.6rem) 1.25rem; }
+.aux-heading { display: flex; justify-content: space-between; align-items: center; gap: .7rem; margin-bottom: .75rem; }
+.aux-heading h2 { margin: 0; font: 700 clamp(1.55rem, 2.4vw, 2.2rem)/1.1 var(--display); }
+.extra-panel .assets, .extra-panel .shelf { margin-top: .7rem; }
+
+#hand-dock {
+  flex: none;
+  min-width: 0;
+  padding: .25rem .65rem .42rem;
+  border: 1px solid #54483f;
+  border-top: 2px solid #ae744d;
+  border-radius: 8px;
+  background: linear-gradient(115deg, #2b2522, #1c2124 54%, #191e21);
+}
+.hand-bar, .hand-label, .hand-tools, .hand-paging, .playable-key { display: flex; align-items: center; }
+.hand-bar { min-width: 0; gap: .65rem; margin-bottom: .2rem; }
+.hand-label { flex: none; gap: .42rem; }
+.hand-label > svg { width: 1.25rem; height: 1.25rem; color: #f0ab7e; }
+.hand-label h2 { margin: 0; font: 700 clamp(1.17rem, 2vw, 1.55rem)/1 var(--display); }
+.hand-count { min-width: 1.4rem; padding: .12rem .3rem; border-radius: 4px; color: #f5dac5; background: #493a30; text-align: center; font: 600 .8rem/1.25 var(--mono); }
+.hand-wallet { gap: .35rem; padding-inline: .4rem; border-color: transparent; background: transparent; color: #f1ca83; white-space: nowrap; }
+.hand-wallet b { font: 600 .84rem/1.1 var(--mono); }
+.playable-key { color: #a6d5ac; font-size: .78rem; gap: .25rem; white-space: nowrap; }
+.hand-tools { gap: .45rem; margin-left: auto; }
+.hand-paging { gap: .2rem; }
+.hand-paging button { width: 44px; padding: 0; }
+.hand-paging button:first-child svg { transform: rotate(180deg); }
+.hand-rail {
+  display: flex;
+  gap: .5rem;
+  min-width: 0;
+  padding: 2px 2px 4px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: #716453 transparent;
+}
+.held-card {
+  position: relative;
+  display: flex;
+  flex: 0 0 clamp(138px, 15.6vw, 210px);
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #555a5a;
+  border-radius: 5px;
+  color: var(--ink);
+  background: #252b2d;
+  text-align: left;
+  scroll-snap-align: start;
+}
+.held-card.playable { border-color: #749c78; }
+.held-card:focus-visible { outline: 2px solid #ffc69a; outline-offset: 0; }
+.held-art { position: relative; display: block; height: clamp(42px, 7vh, 76px); height: clamp(42px, 7dvh, 76px); width: 100%; border-bottom: 2px solid var(--kind, #aaa); }
+.held-art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.held-price, .ready-mark { position: absolute; top: .24rem; display: inline-flex; align-items: center; justify-content: center; border-radius: 3px; }
+.held-price { left: .25rem; gap: .2rem; padding: .12rem .3rem; background: #f1c078; color: #291c12; font: 700 .83rem/1.2 var(--mono); }
+.held-price small { font-size: .65rem; }
+.ready-mark { right: .24rem; width: 1.3rem; height: 1.3rem; background: #b7e1bb; color: #132d20; }
+.ready-mark svg { width: .96rem; height: .96rem; }
+.held-name { display: block; min-height: 2.5em; padding: .2rem .43rem .25rem; font: 600 1.03rem/1.08 var(--display); }
+.held-effect { padding: .15rem .55rem .76rem; color: #d2d5d0; font-size: .92rem; line-height: 1.4; }
+.hand-gallery { display: grid; align-items: stretch; grid-template-columns: repeat(auto-fill, minmax(min(100%, 188px), 1fr)); gap: .7rem; }
+.hand-gallery .held-art { height: clamp(70px, 11vh, 118px); }
+.hand-gallery .held-name { min-height: 0; padding: .55rem .55rem .3rem; font-size: 1.25rem; }
+.empty-hand { margin: .3rem 0; padding: .45rem .4rem; color: var(--muted); font-size: .92rem; }
+.is-playing .notice { bottom: min(26vh, 12.5rem); }
+.is-playing .dialog-close { width: 44px; height: 44px; }
+.is-playing .detail-art { height: clamp(80px, 18vh, 190px); margin-bottom: .6rem; }
+.is-playing .detail-text { margin-block: .6rem; }
+.is-playing .detail .btn { min-height: 44px; margin-top: .25rem; }
+@media (hover: hover) {
+  .held-card:hover, .hand-tools button:not(:disabled):hover, .hand-wallet:hover, .session-overview:hover, .table-switch button:hover { border-color: #e0a780; background-color: #303639; }
+}
+@media (max-width: 900px), (max-width: 1024px) and (orientation: portrait) {
+  .is-playing main.shell { width: calc(100% - 1.25rem); }
+  .table-switch { display: grid; grid-template-columns: repeat(3, 1fr); flex: none; gap: .35rem; }
+  .session-overview { display: none; }
+  .is-playing .table-layout { grid-template-columns: minmax(0, 1fr); }
+  #game-stage[data-panel="turn"] #map-pane, #game-stage[data-panel="map"] #turn { display: none; }
+}
+@media (max-width: 600px) {
+  .is-playing main.shell { width: calc(100% - .65rem); padding-top: .25rem; }
+  .is-playing #room { gap: .3rem; }
+  .is-playing .topbar { height: 44px; }
+  .session-bar { flex-wrap: wrap; gap: .22rem; }
+  .session-title { display: flex; align-items: baseline; gap: .55rem; width: 100%; }
+  .session-title h1 { order: -1; font-size: 1.25rem; }
+  .session-title p { margin: 0; font-size: .63rem; }
+  .session-bar .gauges { gap: .28rem; }
+  .session-bar .gauge { padding: .17rem .32rem; gap: .28rem; }
+  .session-bar .gauge > i { font-size: .9rem; }
+  .session-bar .gauge div > span { font-size: .67rem; }
+  .session-bar .gauge p small { font-size: .62rem; }
+  .session-bar .gauge p b { font-size: .82rem; }
+  #hand-dock { padding: .1rem .32rem .2rem; }
+  .hand-bar { gap: .15rem; margin: 0; }
+  .hand-label { gap: .25rem; }
+  .hand-label > svg, .playable-key { display: none; }
+  .hand-tools { gap: .2rem; }
+  .hand-tools .spread-hand { padding-inline: .4rem; }
+  .hand-rail { gap: .35rem; }
+  .held-card { flex-basis: 132px; }
+  .held-name { font-size: .99rem; }
+  .map-placement { padding-inline: .45rem; }
+  .hand-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .45rem; }
+}
+@media (max-width: 390px) {
+  .hand-label h2 { font-size: 1.03rem; }
+  .hand-tools .spread-hand svg { display: none; }
+  .hand-wallet { padding-inline: .13rem; }
+}
+@media (max-height: 650px) and (orientation: landscape) {
+  .is-playing .topbar { height: 43px; }
+  .is-playing #room { gap: .25rem; }
+  .held-art { height: 37px; }
+  .held-name { font-size: .95rem; min-height: 2.35em; }
+  .is-playing .map-heading { padding-block: .22rem; }
+  .map-scroll { grid-template-rows: minmax(min(300px, 57vw), 1fr) auto auto; }
+}

@@ -67,9 +67,48 @@ export class Decision {
     }
   }
   space(){const a=this.active();return a?.node.inputType===8?{path:a.path,allowed:a.node.availableSpaces,selected:this.state(a.path).value}:null;}
-  quickCard(name){const walk=(node,path)=>{if(!node)return false;if(node.inputType===5 && node.cards?.some(c=>c.name===name)){this.select(path,name);return true;}if(node.inputType===1){for(const [i,ch] of node.options.entries()){if(walk(ch,path+'.'+i)){this.select(path,i);return true;}}}return false;};return walk(this.root,'r');}
+  playableProjects() {
+    const projects = new Map();
+    function visit(node, path) {
+      if (node.inputType === 5) {
+        for (const item of node.cards) projects.set(item.name, path);
+      } else if (node.inputType === 1) {
+        node.options.forEach((child, i) => visit(child, path + '.' + i));
+      }
+    }
+    if (this.root && !this.pending) visit(this.root, 'r');
+    return projects;
+  }
+  quickCard(name) {
+    const path = this.playableProjects().get(name);
+    if (!path) return false;
+    let parent = 'r';
+    for (const index of path.split('.').slice(1)) {
+      this.select(parent, index);
+      parent += '.' + index;
+    }
+    this.select(path, name);
+    return true;
+  }
+  initialProjects() {
+    if (this.root.inputType !== 0) return null;
+    const slot = this.root.options.findIndex(n => n.title === 'Select initial cards to buy');
+    if (slot < 0) return null;
+    const names = this.state('r.' + slot).cards || [];
+    return this.root.options[slot].cards.filter(item => names.includes(item.name));
+  }
   selectedCorp(){if(this.root?.inputType!==0)return null;const i=this.root.options.findIndex(o=>/corporation/i.test(o.title));return i>=0?card(this.state('r.'+i).cards?.[0]):null;}
-  renderPayment(path){const {entries,amount,pay,sum}=this.payment(path);return `<div class="payment"><div class="row"><strong>Platba</strong><b class="money">${amount} M€</b></div>${entries.map(([key,have,rate])=>`<label class="payline">${ico(creditIcons[key])}<span>${creditNames[key]}<small>V zásobě ${have}${rate>1?' · '+rate+' M€/ks':''}</small></span><input type="number" min="0" max="${have}" step="1" value="${pay[key]}" aria-label="${creditNames[key]} na platbu" data-pay="${key}" data-path="${esc(path)}"></label>`).join('')}<div class="pay-total"><span>Celkem</span><b>${sum} / ${amount} M€</b></div></div>`;}
+  renderPayment(path) {
+    const {entries,amount,pay,sum} = this.payment(path);
+    return `<div class="payment"><div class="row"><strong>Platba</strong><b class="money">${amount} M€</b></div>
+      ${entries.map(([key,have,rate]) => `<div class="payline">${ico(creditIcons[key])}<span>${creditNames[key]}<small>V zásobě ${have}${rate>1?' · '+rate+' M€/ks':''}</small></span>
+        <div class="pay-stepper">
+          <button data-do="adjust-pay" data-resource="${key}" data-value="-1" data-path="${path}" aria-label="Odebrat jednotku · ${creditNames[key]}" ${pay[key]<=0?'disabled':''}>−</button>
+          <input type="number" inputmode="numeric" min="0" max="${have}" step="1" value="${pay[key]}" aria-label="${creditNames[key]} na platbu" data-pay="${key}" data-path="${path}">
+          <button data-do="adjust-pay" data-resource="${key}" data-value="1" data-path="${path}" aria-label="Přidat jednotku · ${creditNames[key]}" ${pay[key]>=have?'disabled':''}>+</button>
+        </div></div>`).join('')}
+      <div class="pay-total"><span>Celkem</span><b>${sum} / ${amount} M€</b></div></div>`;
+  }
   renderCards(path,n,s){const chosen=s.cards||[];return `<div class="picks">${n.cards.map(item=>{const c=card(item.name);if(!c)return '';const on=chosen.includes(item.name) || s.card===item.name;return `<div class="pickrow${on?' chosen':''}"><button class="pick" data-do="choose" data-path="${path}" data-value="${esc(item.name)}" aria-pressed="${on}"><img src="${asset('art/'+art(c)+'.webp')}" alt="" loading="lazy"><span><b>${esc(c.name)}</b><small>${c.kind==='corporation'?'Počáteční kapitál '+c.credits+' M€':c.kind==='prelude'?'Karta předehry':'Zahrání '+(n.inputType===5?projectCost(this.view,item):c.cost)+' M€'}</small></span><i class="pickcheck">${on?ico('check'):''}</i></button><button class="peek" data-do="detail" data-card="${esc(c.id)}" title="Účinek karty" aria-label="Účinek karty ${esc(c.name)}">${ico('info')}</button></div>`;}).join('')}</div>`;}
   renderNode(path){const n=this.at(path),s=this.state(path);let html='';
     if(n.inputType===1){html=`<div class="action-list">${n.options.map((o,i)=>`<button data-do="choose" data-path="${path}" data-value="${i}"><i>${ico(actionIcon(o.title))}</i><span>${esc(tr(o.title))}</span>${ico('chevron')}</button>`).join('')}</div>`;}
@@ -88,6 +127,6 @@ export class Decision {
     const back=(path.split('.').length>(steps?2:1)) || (node.inputType===5 && this.state(path).card);
     const title=setup?'Příprava korporace':(this.root.inputType===1 && path==='r'?'Tvoje akce':'Tvoje volba');
     const heading=(path==='r' && node.inputType===1)?'Vyber, co provedeš.':tr(node.title)||'Potvrď volbu';
-    return `<div class="turn-head"><span class="overline orange"><span class="line"></span>Na řadě</span><h2>${title}</h2></div>${steps?`<div class="step-tabs">${this.steps.map((slot,i)=>`<button data-do="step" data-value="${i}" aria-label="Krok ${i+1}" class="${i===this.step?'active':''}" title="${esc(tr(steps[slot].title))}">${this.row('r.'+slot)&&i!==this.step?ico('check'):i+1}</button>`).join('')}</div>`:''}<h3 class="choice-title">${esc(heading)}</h3>${this.renderNode(path)}<div class="turn-foot">${back?`<button class="btn subtle" data-do="choice-back" data-path="${path}">Zpět</button>`:''}${node.inputType!==1 && (node.inputType!==5 || this.state(path).card)?`<button class="btn primary" data-do="${next?'next-step':'submit'}" ${(!leafReady||(!next&&!this.row())||this.pending)?'disabled':''}>${this.pending?'Odesílám…':next?'Další krok':/pass for this generation/i.test(node.title)?'Pasovat':node.inputType===5?'Zaplatit a zahrát':'Potvrdit volbu'}</button>`:''}</div>`;
+    return `<div class="turn-scroll"><div class="turn-head"><span class="overline orange"><span class="line"></span>Na řadě</span><h2>${title}</h2></div>${steps?`<div class="step-tabs">${this.steps.map((slot,i)=>`<button data-do="step" data-value="${i}" aria-label="Krok ${i+1} · ${esc(tr(steps[slot].title))}" aria-current="${i===this.step?'step':'false'}" class="${i===this.step?'active':''}" title="${esc(tr(steps[slot].title))}">${this.row('r.'+slot)&&i!==this.step?ico('check'):i+1}</button>`).join('')}</div>`:''}<h3 class="choice-title">${esc(heading)}</h3>${this.renderNode(path)}</div><div class="turn-foot">${back?`<button class="btn subtle" data-do="choice-back" data-path="${path}">Zpět</button>`:''}${node.inputType!==1 && (node.inputType!==5 || this.state(path).card)?`<button class="btn primary" data-do="${next?'next-step':'submit'}" ${(!leafReady||(!next&&!this.row())||this.pending)?'disabled':''}>${this.pending?'Odesílám…':next?'Další krok':/pass for this generation/i.test(node.title)?'Pasovat':node.inputType===5?'Zaplatit a zahrát':'Potvrdit volbu'}</button>`:''}</div>`;
   }
 }

@@ -1,37 +1,60 @@
 import {Table,basicOptions,roomCode,store} from './room.mjs';
 import {art,asset,card,cardName,cards,decorate,esc,fold,ico,kinds,price,project,sets,tagLabel,tags} from './ui.mjs';
 import {Decision,tr} from './decision.mjs';
-import {awardPanel,expansions,gauges,logHTML,mapHTML,optionInfo,phaseName,playerSeats,resourceBar,scores,seatDot,shelf,spaceText} from './board.mjs';
+import {awardPanel,expansions,logHTML,mapHTML,optionInfo,playerSeats,resourceBar,scores,seatDot,shelf,spaceText} from './board.mjs';
+import {handContents,heldCard,placementBar,sessionBar,tableFrame} from './table-view.mjs';
 const $=s=>document.querySelector(s);
 const modal=$('#modal'); const pages=['home','catalog','room'];
-let current='home', table=null, view=null, decision=null, handTab='hand',limit=24,noticeTimer,dialogReturn,detailReturn,fresh=new Set(),soundContext;
+let current='home', table=null, view=null, decision=null, handTab='played',limit=24,noticeTimer,dialogReturn,detailReturn,fresh=new Set(),soundContext;
+let panel = 'turn', returnPanel = 'turn', lastSpace = '', lastHandKey = '', handObserver;
 const filters={q:'',kind:'',set:'box'};
 const get=(storeObj,key)=>store(storeObj,key);
 let sound=get(localStorage,'sound')===true;
 function beep(high=false){if(!sound)return;try{soundContext ||= new (window.AudioContext||window.webkitAudioContext)();soundContext.resume().catch(()=>{});const o=soundContext.createOscillator(),gain=soundContext.createGain();o.type='sine';o.frequency.value=high?446:315;gain.gain.setValueAtTime(.0001,soundContext.currentTime);gain.gain.exponentialRampToValueAtTime(.05,soundContext.currentTime+.015);gain.gain.exponentialRampToValueAtTime(.0001,soundContext.currentTime+.15);o.connect(gain);gain.connect(soundContext.destination);o.start();o.stop(soundContext.currentTime+.16);}catch{}}
 function soundButton(){const b=$('[data-do="sound"]');b.innerHTML=ico(sound?'sound':'mute');b.setAttribute('aria-pressed',String(sound));b.setAttribute('aria-label',sound?'Vypnout zvuk':'Zapnout zvuk');b.title=b.getAttribute('aria-label');}
 function notify(msg){if(modal.open){const inline=$('#dialog-message');if(inline){inline.textContent=String(msg);inline.hidden=false;return;}}const el=$('#notice');el.textContent=String(msg);el.classList.add('visible');clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>el.classList.remove('visible'),5200);}
-function show(page,{scroll=true}={}){current=page;for(const p of pages)$('#'+p).hidden=p!==page;document.querySelectorAll('nav [data-do]').forEach(b=>{const on=b.dataset.do===page || (page==='room'&&b.dataset.do==='home');b.classList.toggle('active',on);if(on)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});if(page==='home')$('#resume').hidden=!Table.saved(localStorage,sessionStorage)&&!table;if(scroll)window.scrollTo({top:0,behavior:'instant'});}
+function show(page,{scroll=true}={}){current=page;for(const p of pages)$('#'+p).hidden=p!==page;document.body.classList.toggle('is-playing',page==='room'&&!!view?.game);document.querySelectorAll('.top nav [data-do]').forEach(b=>{const on=b.dataset.do===page || (page==='room'&&b.dataset.do==='home');b.classList.toggle('active',on);if(on)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});if(page==='home')$('#resume').hidden=!Table.saved(localStorage,sessionStorage)&&!table;if(scroll)window.scrollTo({top:0,behavior:'instant'});}
 function open(title,body,{large=false,kind=''}={}){if(!modal.open)dialogReturn=document.activeElement;modal.classList.toggle('large',large);modal.dataset.kind=kind;$('#modal-content').innerHTML=`<div class="modal-head"><h2 id="modal-title">${esc(title)}</h2><button class="dialog-close" data-do="dismiss" aria-label="Zavřít">${ico('close')}</button></div><p class="dialog-message" id="dialog-message" role="status" hidden></p>${body}`;if(!modal.open)modal.showModal();}
 function close(){if(modal.open)modal.close();detailReturn=null;}
 modal.addEventListener('close',()=>{const to=dialogReturn;dialogReturn=null;if(to?.isConnected)to.focus({preventScroll:true});});
 modal.addEventListener('click',e=>{if(e.target===modal){const r=modal.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)close();}});
-function makeTable(){if(table)table.close();view=null;decision=null;fresh=new Set();handTab='hand';return table=new Table({onView:receive,onStatus:status,onError:msg=>{if(decision)decision.pending=false;notify(tr(msg));if(view&&current==='room')renderTurn();}});}
+function makeTable(){if(table)table.close();view=null;decision=null;fresh=new Set();handTab='played';panel='turn';returnPanel='turn';lastSpace='';lastHandKey='';handObserver?.disconnect();$('#room').replaceChildren();return table=new Table({onView:receive,onStatus:status,onError:msg=>{if(decision)decision.pending=false;notify(tr(msg));if(view&&current==='room')updateDecision();}});}
 function status(msg){document.querySelectorAll('[data-status]').forEach(el=>el.textContent=msg);if(!view || view.phase!=='lobby')return;const btn=$('[data-do="start"]');if(btn)btn.disabled=!table.online||view.players.length<2||view.players.some(p=>!p.connected);}
 function receive(next){const prev=view;const first=!prev;view=next;const g=view.game,old=prev?.game;
   fresh=new Set(g&&old?g.spaces.filter(s=>s.tileType!=null&&old.spaces.find(x=>x.id===s.id)?.tileType==null).map(x=>x.id):[]);
   if(g?.waitingFor){const sig=JSON.stringify(g.waitingFor);if(!decision || sig!==decision.signature || decision.pending)decision=new Decision(g);else decision.view=g;}else decision=null;
   if(g?.waitingFor&&!old?.waitingFor&&!first)beep(true);
+  if(g?.phase==='end'&&old?.phase!=='end')panel='overview';
   if(first&&current!=='room')show('room');if(current==='room')renderRoom();
+  if(modal.open&&modal.dataset.kind==='card')refreshCardAction();
 }
 function rules(){open('Pravidla hry',`<div class="reading"><p>Každý řídí jednu korporaci. Společně měníte Mars, ale o vítězství rozhodne vlastní výsledek na konci partie.</p><h3>Cíl teraformace</h3><div class="rule-goals"><b>${ico('temp')} +8 °C</b><b>${ico('oxygen')} 14 % kyslíku</b><b>${ico('water')} 9 oceánů</b></div><p>Za každý krok, o který posuneš globální faktor, získáš jeden stupeň teraformace (TR). Poslední generaci dohrajete včetně produkce a závěrečné výsadby zeleně.</p><h3>Začátek partie</h3><p>Vyber jednu ze dvou korporací. Z deseti nabídnutých projektů si můžeš koupit libovolný počet, každý za 3 M€. Při zahrání pak zaplatíš ještě cenu v levém horním rohu karty. Základní korporace dostává 42 M€ a všech deset projektů zdarma.</p><h3>Tah a generace</h3><p>Ve svém tahu proveď jednu nebo dvě akce. Můžeš zahrát kartu, zaplatit standardní projekt, využít akci modré karty, získat čestný titul nebo sponzorovat soutěž. Osm rostlin obvykle proměníš v zeleň a osm tepla zvýší teplotu o 2 °C.</p><p>Po jedné akci můžeš předat tah. Pasováním končíš své tahy pro celou generaci. Jakmile pasují všichni, zbylá energie se přemění na teplo, vyrobí se nové zdroje a každý dostane příjem ve výši TR plus své produkce megakreditů. V novém výzkumu se vybírá ze čtyř karet.</p><h3>Jak číst kartu</h3><p>Zelená karta má jednorázový účinek. Modrá přidává průběžný efekt nebo akci, kterou obvykle můžeš použít jednou za generaci. Červená je jednorázová událost. Ocel platí za stavební projekty po 2 M€, titan za vesmírné po 3 M€. Korporace a některé karty hodnoty mění.</p><h3>Mapa a bodování</h3><p>Oceány patří na modře označená pole. Při umístění destičky získáš bonusy jejího pole a 2 M€ za každý sousední oceán. Zeleň se pokládá vedle vlastní destičky, pokud to jde. Běžná města spolu nesmějí sousedit.</p><p>K TR přičti body z vyložených karet, titulů, soutěží, vlastní zeleně a zeleně sousedící s vlastními městy. Při shodě rozhodují zbylé megakredity.</p><h3>Sólová mise</h3><p>Začínáš na TR 14, používáš Éru korporací a máš 14 generací. S Předehrou se limit zkracuje na 12. S Venuší potřebuješ dokončit také její stupnici. V sólové misi se nesoutěží o tituly ani soutěže.</p><h3>Hra s přáteli</h3><p>Založ stůl a pošli ostatním pozvánku. Každý uvidí svou ruku a společnou mapu. Hostitel drží stůl ve svém prohlížeči a při hraní nechává záložku otevřenou. Po přerušení použij ve stejném prohlížeči „Pokračovat v partii“.</p></div>`,{large:true});}
 function credits(){open('Autoři a zdroje',`<div class="reading"><p>Herní návrh vytvořil Jacob Fryxelius pro FryxGames. Toto fanouškovské webové zpracování má vlastní české rozhraní, kresby na projektových kartách a interaktivní plán Tharsis.</p><p>Herní logika vychází z komunitního projektu Terraforming Mars Open-source. Zdrojové texty této verze včetně úprav a licencí jsou ke stažení.</p><p><a href="${asset('zdrojovy-kod.zip')}" download="zdrojovy-kod.zip">Stáhnout zdrojový kód webu</a> · <a href="${asset('vendor/mars-rules-source.zip')}" download="mars-rules-source.zip">Zdrojové kódy herních pravidel (GPLv3)</a></p><p><a href="https://github.com/terraforming-mars/terraforming-mars/tree/680d9fcb861f183eae201f800a26a5836ba03ac2" target="_blank" rel="noopener">Komunitní projekt</a> · <a href="https://github.com/openmars-app/openmars" target="_blank" rel="noopener">Open Mars</a> · <a href="https://ssimeonoff.github.io/cards-list" target="_blank" rel="noopener">Přehled karet předlohy</a> · <a href="https://fryxgames.se/" target="_blank" rel="noopener">FryxGames</a></p><p>Povrch Marsu pochází ze snímků sond Viking a výškových dat MOLA od NASA, JPL a USGS. Pro tuto hru prošel kartografickou úpravou. Komunikaci mezi hráči zajišťuje PeerJS.</p></div>`);}
 function filtersUI(){const opt=(v,t)=>`<option value="${v}">${t}</option>`;$('#card-set').innerHTML=opt('box','Základní krabice')+opt('all','Všechny sady')+Object.entries(sets).map(([v,t])=>opt(v,t)).join('');$('#card-type').innerHTML=opt('','Všechny typy')+Object.entries(kinds).map(([v,t])=>opt(v,t)).join('');}
 function catalog(){const needle=fold(filters.q).replace(/^#/,'');const list=cards.filter(c=>(filters.set==='all'||(filters.set==='box'?['base','corporate'].includes(c.set):c.set===filters.set))&&(!filters.kind||c.kind===filters.kind)&&(!needle||fold([c.name,c.key,c.id,c.text,...c.tags.map(tagLabel)].join(' ')).includes(needle)));
   $('#catalog-count').textContent=`Počet karet ve výběru · ${list.length}`;$('#catalog-results').innerHTML=list.slice(0,limit).map(c=>project(c)).join('')||'<p class="empty">Žádná karta neodpovídá tomuto výběru.</p>';$('#more-cards').hidden=list.length<=limit;}
-function detail(id){const c=card(id);if(!c)return;const inHand=view?.game?.cardsInHand?.find(x=>x.name===c.key);const can=decision?.root?.inputType===1 && decision.root.options?.some(n=>n.inputType===5 && n.cards?.some(x=>x.name===c.key));
-  if(modal.open && modal.dataset.kind==='player')detailReturn=modal.dataset.seat;else detailReturn=null;
-  open(c.name,`<div class="detail kind-${esc(c.kind)}"><div class="detail-art"><img src="${asset('art/'+art(c)+'.webp')}" alt=""><span class="cost">${price(c)}</span><span class="tag-row">${tags(c.tags)}</span></div><div class="kind-line">${esc(kinds[c.kind])}<span class="cardnum">#${esc(c.id)}</span></div><p class="detail-text">${esc(c.text)}</p><dl class="meta"><div><dt>Sada</dt><dd>${esc(sets[c.set])}</dd></div>${c.tags.length?`<div><dt>Symboly</dt><dd>${c.tags.map(t=>esc(tagLabel(t))).join(', ')}</dd></div>`:''}<div><dt>Původní název</dt><dd lang="en">${esc(c.key)}</dd></div></dl>${inHand&&can?`<button class="btn primary" data-do="quick-play" data-value="${esc(c.key)}">${ico('cards')}Zahrát kartu · ${inHand.calculatedCost} M€</button>`:''}</div>`,{kind:'card'});}
+function refreshCardAction() {
+  const slot = $('#card-action');
+  if (!slot) return;
+  const c = card(modal.dataset.card);
+  const inHand = view?.game?.cardsInHand.find(item => item.name === c.key);
+  let content = '';
+  if (inHand && decision?.playableProjects().has(c.key)) {
+    content = `<button class="btn primary" data-do="quick-play" data-value="${esc(c.key)}">${ico('cards')} Přejít k platbě · ${esc(inHand.calculatedCost ?? c.cost)} M€</button>`;
+  } else if (inHand && modal.dataset.origin === 'hand') {
+    content = `<p class="guide">${decision ? 'Tuto kartu teď nelze zahrát.' : view.game.phase==='end' ? 'Partie skončila.' : 'Čekáš na svůj tah.'}</p>`;
+  }
+  slot.innerHTML = content;
+}
+function detail(id, origin = '') {
+  const c = card(id);
+  if (!c) return;
+  detailReturn = modal.open && modal.dataset.kind === 'player' ? modal.dataset.seat : null;
+  modal.dataset.card = id;
+  modal.dataset.origin = origin;
+  open(c.name,`<div class="detail kind-${esc(c.kind)}"><div class="detail-art"><img src="${asset('art/'+art(c)+'.webp')}" alt=""><span class="cost">${price(c)}</span><span class="tag-row">${tags(c.tags)}</span></div><div class="kind-line">${esc(kinds[c.kind])}<span class="cardnum">#${esc(c.id)}</span></div><p class="detail-text">${esc(c.text)}</p><div id="card-action"></div><dl class="meta"><div><dt>Sada</dt><dd>${esc(sets[c.set])}</dd></div>${c.tags.length?`<div><dt>Symboly</dt><dd>${c.tags.map(t=>esc(tagLabel(t))).join(', ')}</dd></div>`:''}<div><dt>Původní název</dt><dd lang="en">${esc(c.key)}</dd></div></dl></div>`,{kind:'card'});
+  refreshCardAction();
+}
 function nameField(){return `<label class="form-label">Tvoje jméno<input name="name" autocomplete="nickname" required maxlength="28" placeholder="Jméno u stolu" value="${esc(get(localStorage,'name')||'')}" autofocus></label>`;}
 function optionForm(options,solo=false){return `<div class="option-form">${Object.entries(optionInfo).map(([key,[name,detail]])=>`<label><input type="checkbox" name="${key}" ${options[key]?'checked':''} ${key==='corporateEra'&&solo?'disabled':''}><span><b>${name}</b><small>${detail}</small></span></label>`).join('')}</div>`;}
 function enterDialog(kind,code='') {const solo=kind==='solo',join=kind==='join';open(solo?'Sólová mise':join?'Připojit se ke stolu':'Založit stůl',`<form id="enter-form" data-kind="${kind}"><p class="guide">${solo?'Teraformuj Mars během 14 generací. S Předehrou máš generací 12.':join?'Zadej kód nebo vlož pozvánku od hostitele.':'Stůl pro 2–5 hráčů. Po založení dostaneš odkaz pro přátele.'}</p>${nameField()}${join?`<label class="form-label">Kód nebo odkaz na stůl<input type="text" name="code" value="${esc(code)}" required autocomplete="off" spellcheck="false" placeholder="Např. K7P3MXS"></label>`:''}${solo?`<details class="settings"><summary>Rozšíření mise</summary>${optionForm({...basicOptions,corporateEra:true},true)}</details>`:`<label class="check-line"><input type="checkbox" name="beginner"><span>Hrát za Základní korporaci <small>42 M€ a 10 bezplatných projektů v základní hře.</small></span></label>`}<div class="form-foot"><button class="btn primary" type="submit">${ico(solo?'play':join?'link':'plus')}${solo?'Spustit misi':join?'Připojit se':'Vytvořit stůl'}</button></div></form>`,{kind:'enter'});}
@@ -40,14 +63,150 @@ function inviteURL(){if(location.protocol==='file:')return table.code;const u=ne
 async function copy(which){if(location.protocol==='file:')which='code';const value=which==='code'?table.code:inviteURL();try{await navigator.clipboard.writeText(value);notify(which==='code'?'Kód stolu je zkopírovaný.':'Pozvánka je zkopírovaná. Pošli ji přátelům.');}catch{open('Pozvánka ke stolu',`<label class="form-label">Zkopíruj ${which==='code'?'kód':'odkaz'}<input readonly value="${esc(value)}" id="manual-copy"></label>`);$('#manual-copy').select();}}
 function resume(){const saved=Table.saved(localStorage,sessionStorage);if(table&&!table.closed){show('room');if(view)renderRoom();else waiting(table.code);return;}if(!saved){notify('V tomto prohlížeči zatím není uložená partie.');return;}const t=makeTable();if(saved.mode==='guest')waiting(saved.code);if(!t.restore(saved)){t.close();table=null;notify('Tuto partii se nepodařilo obnovit.');show('home');return;}show('room');if(view)renderRoom();}
 function lobby(){const mine=view.id===view.host;const expansionOn=Object.keys(view.options).some(k=>k!=='corporateEra'&&view.options[k]);return `<div class="table-head"><div><p class="overline orange"><span class="line"></span>Čekárna</p><h1>Stůl na Marsu</h1></div><button class="btn subtle" data-do="back-home">Herní sál</button></div><div class="lobby-grid"><div class="pane lobby-main"><h2>Posádka <small>${view.players.length}/5</small></h2>${view.players.map(p=>`<div class="roster">${seatDot(p.color)}<span><b>${esc(p.name)}${p.id===view.id?' · ty':''}</b><small>${p.id===view.host?'Hostitel':p.connected?'Připojeno':'Odpojeno'} · ${p.beginner&&!expansionOn?'Základní korporace':'Výběr ze dvou korporací'}</small></span>${mine&&!p.connected?`<button class="textbtn" data-do="remove-seat" data-value="${esc(p.id)}">Uvolnit místo</button>`:''}</div>`).join('')}<div class="invite"><span class="eyelabel">Kód stolu</span><div class="row"><strong>${esc(view.code)}</strong><button class="iconbtn" data-do="copy-code" aria-label="Zkopírovat kód">${ico('copy')}</button></div><button class="btn primary" data-do="copy-link">${ico('link')}${location.protocol==='file:'?'Kopírovat kód pro přátele':'Kopírovat pozvánku'}</button>${location.protocol==='file:'?'<p class="guide">Přátelé otevřou svůj soubor hry a zadají tento kód.</p>':''}</div><small class="network" data-status>${esc(table.status)}</small><p class="guide">Hostitel má během partie otevřenou tuto záložku. Ke stolu se můžeš vrátit ve stejném prohlížeči.</p></div><div class="pane lobby-options"><h2>Nastavení partie</h2>${mine?`<div id="lobby-options">${optionForm(view.options)}</div>`:`<p>${Object.keys(view.options).filter(k=>view.options[k]).map(k=>optionInfo[k][0]).join(' · ')||'Základní hra'}</p>`}${expansionOn?'<p class="guide">S rozšířením si každý vybírá svou korporaci.</p>':`<label class="check-line"><input type="checkbox" id="lobby-beginner" ${view.players.find(p=>p.id===view.id)?.beginner?'checked':''}><span>Hrát za Základní korporaci</span></label>`}${mine?`<button class="btn primary" data-do="start" ${!table.online||view.players.length<2||view.players.some(p=>!p.connected)?'disabled':''}>${ico('play')}Zahájit partii</button>`:'<p class="guide">Partii spustí hostitel.</p>'}</div></div>`;}
-function shelfPanel(){const v=view.game;const tabs=[['hand','Moje ruka · '+v.cardsInHand.length],['played','Vyložené · '+v.playedCards.length],['awards','Tituly a soutěže'],...(v.turmoil||v.colonies?.length?[['extras','Rozšíření']]:[]),['log','Průběh partie']];const tab=tabs.some(([k])=>k===handTab)?handTab:'hand';return `<div class="game-tabs" aria-label="Karty a přehledy">${tabs.map(([k,t])=>`<button class="${k===tab?'active':''}" data-do="shelf" data-value="${k}" aria-pressed="${k===tab}">${esc(t)}</button>`).join('')}</div>${tab==='hand'?shelf(v.cardsInHand,'V ruce zatím nemáš žádné projekty.'):tab==='played'?shelf([...(v.corporationCard?[v.corporationCard]:[]),...v.playedCards],'Zatím nemáš vyloženou žádnou kartu.'):tab==='awards'?awardPanel(v):tab==='extras'?expansions(v):logHTML(v)}`;}
-function renderTurn(){const el=$('#turn');if(!el||!view?.game)return;const g=view.game;if(g.phase==='end'){el.innerHTML=`<h2>Výsledky jsou uzavřené</h2><p class="guide">Na plánu zůstávají všechny destičky a vyložené karty si můžeš dál prohlížet.</p><button class="btn subtle" data-do="back-home">Do herního sálu</button>`;return;}el.innerHTML=decision?decision.render():`<div class="overline orange"><span class="line"></span>Herní tah</div><h2>Čekáš na ostatní</h2><p class="guide">${g.players.filter(p=>p.isActive).map(p=>esc(p.name)).join(', ')||'Ostatní hráči'} právě dokončují volbu. Mezitím můžeš prohlížet mapu i své karty.</p>`;}
-function renderMap(){const el=$('#map-pane');if(el&&view?.game)el.innerHTML=mapHTML(view.game,decision,fresh);}
-function renderRoom(){if(!view)return;const r=$('#room');if(view.phase==='lobby'){r.innerHTML=lobby();return;}const g=view.game,solo=table.mode==='solo';r.innerHTML=`<div class="table-head"><div><p class="overline orange"><span class="line"></span>${solo?'Sólová mise':'Společný stůl · '+esc(view.code)}</p><h1>Herní stůl</h1></div><div class="table-state"><b>${ico('clock')} Generace ${g.generation}${solo?' / '+(view.options.prelude?12:14):''}</b><span>${phaseName(g)}</span></div></div>${g.phase==='end'?scores(g):''}${gauges(g)}${playerSeats(g,view.players)}<div class="table-layout"><section id="map-pane" class="pane map-pane" aria-label="Mapa Tharsis"></section><aside id="turn" class="pane turn" aria-label="Aktuální volba"></aside></div><section class="assets"><div class="pane-head"><div><p class="overline orange"><span class="line"></span>${esc(g.name)}</p><h2>${esc(g.corporationCard?cardName(g.corporationCard.name):'Moje korporace')}</h2></div><strong class="tr-badge">TR ${g.terraformRating}</strong></div>${resourceBar(g)}</section><section class="shelf" id="shelf">${shelfPanel()}</section><div class="table-bottom"><span class="network" data-status>${esc(table.status)}</span><button class="textbtn" data-do="back-home">Do herního sálu</button></div>`;renderTurn();renderMap();fresh=new Set();}
+function shelfPanel() {
+  const v = view.game;
+  const tabs = [['played', 'Vyložené · ' + v.playedCards.length], ['awards', 'Tituly a soutěže']];
+  if (v.turmoil || v.colonies?.length) tabs.push(['extras', 'Rozšíření']);
+  tabs.push(['log', 'Průběh partie']);
+  const tab = tabs.some(([key]) => key === handTab) ? handTab : 'played';
+  const content = tab === 'played' ? shelf([...(v.corporationCard ? [v.corporationCard] : []), ...v.playedCards], 'Zatím nemáš vyloženou žádnou kartu.')
+    : tab === 'awards' ? awardPanel(v) : tab === 'extras' ? expansions(v) : logHTML(v);
+  return `<div class="game-tabs" aria-label="Přehledy partie">${tabs.map(([k,t]) => `<button class="${k===tab?'active':''}" data-do="shelf" data-value="${k}" aria-pressed="${k===tab}">${esc(t)}</button>`).join('')}</div>${content}`;
+}
+
+function renderOverview() {
+  const g = view.game;
+  $('#overview-panel').innerHTML = `<div class="aux-heading"><h2>Přehled partie</h2><button class="btn subtle" data-do="panel" data-value="turn">Zpět ke hře</button></div>
+    ${g.phase === 'end' ? scores(g) : ''}
+    ${playerSeats(g, view.players)}
+    <section class="assets"><div class="pane-head"><div><p class="overline orange">${esc(g.name)}</p><h2>${esc(g.corporationCard ? cardName(g.corporationCard.name) : 'Moje korporace')}</h2></div><strong class="tr-badge">TR ${g.terraformRating}</strong></div>${resourceBar(g)}</section>
+    <section class="shelf" id="shelf">${shelfPanel()}</section>
+    <div class="table-bottom"><span class="network" data-status>${esc(table.status)}</span><button class="textbtn" data-do="back-home">Do herního sálu</button></div>`;
+}
+
+function handPaging() {
+  const rail = $('#hand-rail');
+  if (!rail || !rail.clientWidth) return;
+  const max = rail.scrollWidth - rail.clientWidth;
+  const controls = $('#hand-paging');
+  controls.hidden = max <= 2;
+  controls.firstElementChild.disabled = rail.scrollLeft <= 2;
+  controls.lastElementChild.disabled = rail.scrollLeft >= max - 2;
+}
+
+function renderHand() {
+  const g = view.game;
+  const hand = handContents(g, decision);
+  const key = JSON.stringify([hand.label, hand.items.map(c => [c.name,c.calculatedCost,hand.playable.has(c.name)])]);
+  $('#hand-heading').textContent = hand.label;
+  $('#hand-count').textContent = hand.items.length;
+  const wallet = $('.hand-wallet');
+  wallet.innerHTML = ico('coin') + `<b>${g.megaCredits} M€</b>`;
+  wallet.setAttribute('aria-label', `Zásoba ${g.megaCredits} megakreditů. Zobrazit přehled korporace`);
+  $('#playable-key').hidden = !hand.items.some(c => hand.playable.has(c.name));
+  const rail = $('#hand-rail');
+  if (key !== lastHandKey) {
+    const left = rail.scrollLeft;
+    const focusedCard = rail.contains(document.activeElement) ? document.activeElement.dataset.card : null;
+    rail.innerHTML = hand.items.map(c => heldCard(c,hand.playable)).join('') || `<p class="empty-hand">${hand.empty}</p>`;
+    rail.scrollLeft = left;
+    if (focusedCard) rail.querySelector(`[data-card="${focusedCard}"]`)?.focus({preventScroll:true});
+    lastHandKey = key;
+  }
+  const gallery = $('#full-hand');
+  if (panel === 'hand' && gallery.dataset.hand !== key) {
+    gallery.innerHTML = `<div class="aux-heading"><h2>${esc(hand.label)} <small>· ${hand.items.length}</small></h2><button class="btn subtle" data-do="spread-hand">Zpět ke hře</button></div>
+      <div class="hand-gallery">${hand.items.map(c => heldCard(c,hand.playable,true)).join('') || `<p class="empty-hand">${hand.empty}</p>`}</div>`;
+    gallery.dataset.hand = key;
+  }
+  requestAnimationFrame(handPaging);
+}
+
+function renderTurn() {
+  const el = $('#turn');
+  if (!el || !view?.game) return;
+  const g = view.game;
+  const a = decision?.active();
+  const key = a ? JSON.stringify([decision.signature,a.path,decision.state(a.path).card]) : g.phase;
+  const top = el.dataset.choice === key ? el.querySelector('.turn-scroll')?.scrollTop || 0 : 0;
+  const focus = el.contains(document.activeElement) ? document.activeElement : null;
+  if (g.phase === 'end') {
+    el.innerHTML = '<div class="turn-scroll"><h2>Partie skončila</h2><button class="btn primary" data-do="panel" data-value="overview">Výsledky partie</button></div>';
+  } else {
+    el.innerHTML = decision ? decision.render() : `<div class="turn-scroll"><p class="overline orange">Herní tah</p><h2>Čekáš na ostatní</h2><p class="guide">${esc(g.players.filter(p=>p.isActive).map(p=>p.name).join(', ')||'Ostatní hráči')} právě dokončují volbu.</p></div>`;
+  }
+  const scroller = el.querySelector('.turn-scroll');
+  if (scroller) scroller.scrollTop = top;
+  if (focus?.dataset.do && el.dataset.choice === key) {
+    const replacement = [...el.querySelectorAll('button[data-do]')].find(b => b.dataset.do === focus.dataset.do && b.dataset.value === focus.dataset.value && b.dataset.path === focus.dataset.path && b.dataset.resource === focus.dataset.resource);
+    replacement?.focus({preventScroll:true});
+  }
+  el.dataset.choice = key;
+}
+
+function renderMap() {
+  const el = $('#map-pane');
+  if (!el || !view?.game) return;
+  const top = el.querySelector('.map-scroll')?.scrollTop || 0;
+  const focus = el.contains(document.activeElement) ? document.activeElement.dataset.value : null;
+  el.innerHTML = mapHTML(view.game, decision, fresh) + placementBar(view.game, decision);
+  el.querySelector('.map-scroll').scrollTop = top;
+  if (focus) el.querySelector(`[data-do="map-cell"][data-value="${CSS.escape(focus)}"]`)?.focus({preventScroll:true});
+}
+
+function displayPanel() {
+  const stage = $('#game-stage');
+  if (!stage) return;
+  stage.dataset.panel = panel;
+  $('#board-and-turn').hidden = panel === 'overview' || panel === 'hand';
+  $('#overview-panel').hidden = panel !== 'overview';
+  $('#full-hand').hidden = panel !== 'hand';
+  if (panel === 'overview') renderOverview();
+  document.querySelectorAll('.table-switch button,.session-overview').forEach(b => {
+    b.setAttribute('aria-pressed', String(b.dataset.value === panel));
+  });
+  const spread = $('#hand-dock [data-do="spread-hand"]');
+  spread.setAttribute('aria-expanded', String(panel === 'hand'));
+  spread.querySelector('span').textContent = panel === 'hand' ? 'Zpět ke hře' : 'Rozložit';
+}
+
+function followPlacement() {
+  const space = decision?.space();
+  const key = space ? decision.signature + space.path : '';
+  if (key && key !== lastSpace) panel = 'map';
+  else if (!key && lastSpace && panel === 'map') panel = 'turn';
+  lastSpace = key;
+}
+
+function renderRoom() {
+  if (!view) return;
+  const room = $('#room');
+  document.body.classList.toggle('is-playing', current === 'room' && !!view.game);
+  if (view.phase === 'lobby') { room.innerHTML = lobby(); return; }
+  if (!$('#game-stage')) {
+    room.innerHTML = tableFrame();
+    const rail = $('#hand-rail');
+    rail.addEventListener('scroll',handPaging,{passive:true});
+    if (typeof ResizeObserver !== 'undefined') {
+      handObserver?.disconnect();
+      handObserver = new ResizeObserver(handPaging);
+      handObserver.observe(rail);
+    }
+    lastHandKey = '';
+  }
+  $('#session-bar').innerHTML = sessionBar(view.game, table, view);
+  followPlacement();
+  displayPanel();
+  renderTurn();
+  renderMap();
+  renderHand();
+  fresh = new Set();
+}
+
 function playerDetail(id){const p=view?.game?.players.find(x=>x.id===id);if(!p)return;open(p.name,`<p>${seatDot(p.color)} ${esc(p.corporationCard?cardName(p.corporationCard.name):'Připravuje korporaci')} · TR ${p.terraformRating} · v ruce ${p.cardsInHandNbr} karet</p>${resourceBar(p)}<h3>Vyložené karty</h3>${shelf([...(p.corporationCard?[p.corporationCard]:[]),...p.playedCards],'Zatím žádné vyložené karty.')}`,{large:true,kind:'player'});modal.dataset.seat=id;}
-function updateDecision(){renderTurn();renderMap();}
+function updateDecision(){if(!view?.game)return;followPlacement();displayPanel();renderTurn();renderMap();renderHand();}
 function send(a){if(!table)throw Error('Stůl není otevřený.');table.send(a);}
-function submitDecision(){if(!decision||decision.pending)return;const rows=decision.row();if(!rows)return;decision.pending=true;try{send({type:'answer',rows});if(table.mode==='guest')renderTurn();beep();}catch(e){decision.pending=false;renderTurn();throw e;}}
+function submitDecision(){if(!decision||decision.pending)return;const rows=decision.row();if(!rows)return;decision.pending=true;try{send({type:'answer',rows});if(table.mode==='guest')updateDecision();beep();}catch(e){decision.pending=false;updateDecision();throw e;}}
 function dispatch(b){const act=b.dataset.do,value=b.dataset.value,path=b.dataset.path;
   switch(act){
     case 'home':if(view || (table && table.mode==='guest')){resume();}else show('home');break;
@@ -55,7 +214,7 @@ function dispatch(b){const act=b.dataset.do,value=b.dataset.value,path=b.dataset
     case 'catalog':close();show('catalog');catalog();break;
     case 'rules':rules();break;case 'credits':credits();break;
     case 'sound':sound=!sound;store(localStorage,'sound',sound);soundButton();beep();break;
-    case 'detail':detail(b.dataset.card);break;
+    case 'detail':detail(b.dataset.card,b.dataset.origin);break;
     case 'dismiss':if(detailReturn){const seat=detailReturn;detailReturn=null;playerDetail(seat);}else close();break;
     case 'create':case 'join':case 'solo':enterDialog(act);break;
     case 'more':limit+=32;catalog();break;case 'resume':resume();break;
@@ -68,7 +227,30 @@ function dispatch(b){const act=b.dataset.do,value=b.dataset.value,path=b.dataset
     case 'choice-back':decision.back(path);updateDecision();break;
     case 'submit':submitDecision();break;
     case 'map-cell':{const m=decision?.space(),s=view?.game?.spaces.find(x=>x.id===value);if(!s)return;if(m?.allowed.includes(value)){decision.select(m.path,value);updateDecision();}else notify(spaceText(s,view.game));break;}
-    case 'quick-play':if(decision?.quickCard(value)){close();show('room',{scroll:false});renderRoom();$('#turn').scrollIntoView({block:'start'});}break;
+    case 'quick-play':
+      if(decision?.quickCard(value)){panel='turn';close();show('room',{scroll:false});renderRoom();}
+      else {refreshCardAction();notify('Tuto kartu teď nelze zahrát.');}
+      break;
+    case 'adjust-pay':{
+      if(!decision||decision.pending)break;
+      const resource=b.dataset.resource;
+      decision.setPay(path,resource,decision.payment(path).pay[resource]+Number(value));
+      renderTurn();break;
+    }
+    case 'panel':
+      panel = b.classList.contains('session-overview') && panel==='overview' ? (decision?.space()?'map':'turn') : value;
+      displayPanel();renderHand();break;
+    case 'spread-hand':
+      if(panel==='hand') panel=returnPanel;
+      else {returnPanel=panel;panel='hand';}
+      displayPanel();renderHand();break;
+    case 'page-hand':{
+      const rail=$('#hand-rail'),first=rail.firstElementChild;
+      const pitch=first.getBoundingClientRect().width + (parseFloat(getComputedStyle(rail).columnGap)||0);
+      const count=Math.max(1,Math.floor(rail.clientWidth/pitch));
+      rail.scrollBy({left:Number(value)*count*pitch,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+      break;
+    }
     case 'shelf':handTab=value;$('#shelf').innerHTML=shelfPanel();break;
     case 'player-detail':playerDetail(value);break;
   }

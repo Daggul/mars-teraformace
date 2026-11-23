@@ -7,6 +7,7 @@ import {Table,roomCode} from '../src/room.mjs';
 import {Decision} from '../src/decision.mjs';
 import {art,card,cards} from '../src/ui.mjs';
 import {mapHTML,scores} from '../src/board.mjs';
+import {handContents,heldCard,placementBar} from '../src/table-view.mjs';
 vm.runInThisContext(fs.readFileSync(new URL('../public/vendor/mars-rules.js',import.meta.url),'utf8'));
 const rules=globalThis.MarsRules;
 const memory=()=>{const map=new Map();return {getItem:k=>map.get(k)??null,setItem:(k,v)=>map.set(k,v),removeItem:k=>map.delete(k)};};
@@ -59,4 +60,58 @@ test('Solo and the four optional expansions initialize and restore all pending i
 });
 test('A player can pay with materials without losing unnecessary credits',()=>{
  const v={cardsInHand:[],megaCredits:12,steel:2,steelValue:2,heat:0,titanium:0,titaniumValue:3,waitingFor:{title:'Pay',inputType:4,amount:13,canUseSteel:true}};const d=new Decision(v);assert.deepEqual([d.payment('r').sum,d.payment('r').pay.megaCredits,d.payment('r').pay.steel],[13,11,1]);d.setPay('r','steel',2);assert.equal(d.payment('r').pay.megaCredits,9);assert.ok(d.row());
+});
+
+test('The hand previews only selected purchases, then shows only the viewing player’s projects', () => {
+  const game = rules.create({players:[{id:'s',name:'Sólo'}],options:{corporateEra:true},seed:.51});
+  const initial = rules.view(game,'s');
+  const setup = new Decision(initial);
+  const index = setup.root.options.findIndex(node => node.title === 'Select initial cards to buy');
+  const path = 'r.' + index;
+  const first = setup.at(path).cards[0];
+  assert.equal(handContents(initial,setup).label,'Karty k nákupu');
+  assert.deepEqual(handContents(initial,setup).items,[]);
+  setup.select(path,first.name);
+  assert.deepEqual(handContents(initial,setup).items.map(item => item.name),[first.name]);
+  assert.equal(setup.quickCard(first.name),false);
+  setup.select(path,first.name);
+  assert.deepEqual(handContents(initial,setup).items,[]);
+
+  const table = rules.create({players:[{id:'a',name:'A',beginner:true},{id:'b',name:'B',beginner:true}],options:{corporateEra:false},seed:.51});
+  const views = ['a','b'].map(id => rules.view(table,id));
+  const active = views.find(v => v.waitingFor);
+  const waiting = views.find(v => !v.waitingFor);
+  const decision = new Decision(active);
+  const hand = handContents(active,decision);
+  const other = handContents(waiting,null);
+  assert.deepEqual(hand.items,active.cardsInHand);
+  assert.equal(other.label,'Moje ruka');
+  assert.deepEqual(other.items,waiting.cardsInHand);
+  assert.equal(other.playable.size,0);
+  assert.ok(!hand.items.some(c => other.items.some(o => o.name === c.name)));
+  const choices = active.waitingFor.options.find(node => node.inputType === 5).cards.map(c => c.name);
+  assert.deepEqual([...hand.playable.keys()].sort(),choices.sort());
+  const project = hand.items.find(c => hand.playable.has(c.name));
+  assert.ok(project);
+  assert.match(heldCard(project,hand.playable),/ready-mark/);
+  assert.doesNotMatch(heldCard(project,other.playable),/ready-mark/);
+  assert.match(heldCard(project,hand.playable,true),/held-effect/);
+  assert.equal(decision.quickCard(other.items[0].name),false);
+  assert.ok(decision.quickCard(project.name));
+  assert.ok(decision.row()[0].includes(project.name));
+  assert.equal(rules.view(table,active.id).megaCredits,active.megaCredits);
+  decision.pending = true;
+  assert.equal(decision.quickCard(project.name),false);
+});
+
+test('Tile placement has an explicit confirmation on the map', () => {
+  const game = {spaces:[{id:'08',spaceType:'ocean',bonus:[]}],players:[],waitingFor:{title:'Select space for ocean',inputType:8,availableSpaces:['08']}};
+  const choose = new Decision(game);
+  assert.match(placementBar(game,choose),/data-do="submit" disabled/);
+  choose.select('r','08');
+  const selected = placementBar(game,choose);
+  assert.match(selected,/Pole 08/);
+  assert.match(selected,/Potvrdit umístění/);
+  assert.doesNotMatch(selected,/disabled/);
+  assert.deepEqual(choose.row(),[['08']]);
 });
