@@ -26,3 +26,21 @@ jobs:
           name: Mars-tablet
           path: ${{ runner.temp }}/mars-tablet-screenshots
           retention-days: 7
+      - name: Prepare small inline previews of the two public test screens
+        run: |
+          node <<'JS'
+          const fs = require('node:fs');
+          const {execFileSync} = require('node:child_process');
+          const path = require('node:path');
+          const dir = path.join(process.env.RUNNER_TEMP, 'mars-tablet-screenshots');
+          for (const [key, file] of [['wide','Mars-tablet-na-sirku'],['tall','Mars-tablet-na-vysku']]) {
+            const input = path.join(dir, file + '.jpg');
+            const output = path.join(dir, key + '.webp');
+            execFileSync('convert', [input, '-resize', '840x840>', '-define', 'webp:target-size=25000', '-quality', '65', output]);
+            const b64 = fs.readFileSync(output).toString('base64');
+            console.log('MARS_PREVIEW_SIZE_' + key + '=' + b64.length);
+            for (let offset = 0; offset < b64.length; offset += 1200) {
+              console.log('MARS_PREVIEW_PART_' + key + '_' + offset + '=' + b64.slice(offset, offset + 1200));
+            }
+          }
+          JS
