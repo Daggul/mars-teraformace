@@ -101,8 +101,14 @@ function renderHand() {
   $('#hand-heading').textContent = hand.label;
   $('#hand-count').textContent = hand.items.length;
   const wallet = $('.hand-wallet');
-  wallet.innerHTML = ico('coin') + `<b>${g.megaCredits} M€</b>`;
-  wallet.setAttribute('aria-label', `Zásoba ${g.megaCredits} megakreditů. Zobrazit přehled korporace`);
+  const credits = g.corporationCard ? g.megaCredits : decision?.selectedCorp()?.credits;
+  wallet.hidden = credits == null;
+  if (credits != null) {
+    const balance = g.corporationCard ? 'Zásoba' : 'Počáteční kapitál';
+    wallet.innerHTML = ico('coin') + `<b>${credits} M€</b>`;
+    wallet.title = `${balance} ${credits} M€`;
+    wallet.setAttribute('aria-label', `${balance} ${credits} megakreditů. Zobrazit přehled korporace`);
+  }
   $('#playable-key').hidden = !hand.items.some(c => hand.playable.has(c.name));
   const rail = $('#hand-rail');
   if (key !== lastHandKey) {

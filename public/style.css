@@ -296,3 +296,15 @@ body.is-playing {
   .is-playing .map-heading { padding-block: .22rem; }
   .map-scroll { grid-template-rows: minmax(min(300px, 57vw), 1fr) auto auto; }
 }
+
+/* Netlify adds a fixed 202 × 64 pixel badge after the page loads. */
+@media (orientation: landscape) and (min-width: 600px) {
+  .is-playing:has(#nl-badge-frame) .hand-rail {
+    margin-inline-end: max(0px, calc(206px - 50vw + 50%));
+  }
+}
+@media (orientation: portrait), (max-width: 599px) {
+  .is-playing:has(#nl-badge-frame) main.shell {
+    padding-bottom: max(64px, env(safe-area-inset-bottom));
+  }
+}
