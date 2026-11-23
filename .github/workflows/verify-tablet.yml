@@ -26,22 +26,3 @@ jobs:
           name: Mars-tablet
           path: ${{ runner.temp }}/mars-tablet-screenshots
           retention-days: 7
-      - name: Prepare small previews of both test screens
-        run: |
-          python3 -m venv "$RUNNER_TEMP/mars-thumbnails"
-          "$RUNNER_TEMP/mars-thumbnails/bin/pip" install -q Pillow==11.3.0
-          "$RUNNER_TEMP/mars-thumbnails/bin/python" - <<'PY'
-          import base64, io, os
-          from pathlib import Path
-          from PIL import Image
-          directory = Path(os.environ['RUNNER_TEMP']) / 'mars-tablet-screenshots'
-          for key, filename in [('wide', 'Mars-tablet-na-sirku.jpg'), ('tall', 'Mars-tablet-na-vysku.jpg')]:
-              image = Image.open(directory / filename)
-              image.thumbnail((850,850),Image.Resampling.LANCZOS)
-              buf = io.BytesIO()
-              image.save(buf,format='WEBP',quality=59,method=5)
-              data = base64.b64encode(buf.getvalue()).decode('ascii')
-              print(f'MARS_PREVIEW_SIZE_{key}={len(data)}')
-              for offset in range(0,len(data),1000):
-                  print(f'MARS_PREVIEW_PART_{key}_{offset}={data[offset:offset+1000]}')
-          PY
